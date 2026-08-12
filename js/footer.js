@@ -1,35 +1,47 @@
-/*======================================
+"use strict";
+
+/* ======================================
+            PIXELCODE
             LOAD FOOTER
-======================================*/
+====================================== */
 
-document.addEventListener("DOMContentLoaded",()=>{
+document.addEventListener(
+    "DOMContentLoaded",
+    () => {
 
-    fetch("footer.html")
+        fetch("/pixelcode/footer.html")
 
-    .then(response=>response.text())
+            .then(response => {
 
-    .then(data=>{
+                if (!response.ok) {
 
-        document.body.insertAdjacentHTML(
+                    throw new Error(
+                        `Footer HTTP Error: ${response.status}`
+                    );
 
-            "beforeend",
+                }
 
-            data
+                return response.text();
 
-        );
+            })
 
-    })
+            .then(data => {
 
-    .catch(error=>{
+                document.body.insertAdjacentHTML(
+                    "beforeend",
+                    data
+                );
 
-        console.error(
+            })
 
-            "Footer Error:",
+            .catch(error => {
 
-            error
+                console.error(
+                    "Footer Error:",
+                    error
+                );
 
-        );
+            });
 
-    });
-
-});
+    }
+);
