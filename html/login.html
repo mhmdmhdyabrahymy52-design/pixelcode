@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+
+<html lang="fa" dir="rtl">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>
+
+        ورود | PixelCode
+
+    </title>
+
+    <!-- Font -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@100;200;300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+
+    <!-- CSS -->
+
+    <link rel="stylesheet" href="../css/login.css">
+
+    <link rel="stylesheet" href="../css/toast.css">
+
+    <link rel="stylesheet" href="../css/modal.css">
+
+    <link rel="stylesheet" href="../css/animations.css">
+
+</head>
+
+<body>
+
+    <main class="login-page">
+
+        <div class="login-card">
+
+            <a href="index.html" class="logo">
+
+                Pixel<span>Code</span>
+
+            </a>
+
+            <h1>
+
+                ورود به حساب کاربری
+
+            </h1>
+
+            <p class="subtitle">
+
+                برای ادامه وارد حساب خود شوید.
+
+            </p>
+
+            <form id="loginForm" class="login-form">
+                <!--==========================
+        نام کاربری
+===========================-->
+
+                <div class="input-group">
+
+                    <label for="username">
+
+                        نام کاربری یا ایمیل
+
+                    </label>
+
+                    <input type="text" id="username" placeholder="نام کاربری یا ایمیل" autocomplete="username">
+
+                </div>
+
+                <!--==========================
+        رمز عبور
+===========================-->
+
+                <div class="input-group">
+
+                    <label for="password">
+
+                        رمز عبور
+
+                    </label>
+
+                    <div class="password-box">
+
+                        <input type="password" id="password" placeholder="رمز عبور" autocomplete="current-password">
+
+                        <button type="button" id="togglePassword" class="show-password">
+
+                            👁
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+                <!--==========================
+        تنظیمات
+===========================-->
+
+                <div class="login-options">
+
+                    <label class="remember">
+
+                        <input type="checkbox" id="rememberMe">
+
+                        مرا به خاطر بسپار
+
+                    </label>
+
+                    <a href="#" class="forgot-password">
+
+                        فراموشی رمز عبور
+
+                    </a>
+
+                </div>
+
+                <!--==========================
+        دکمه ورود
+===========================-->
+
+                <button type="submit" class="login-btn" id="loginBtn">
+
+                    ورود به حساب
+
+                </button>
+
+            </form>
+
+            <!--==========================
+        ثبت نام
+===========================-->
+
+            <p class="register-text">
+
+                حساب کاربری ندارید؟
+
+                <a href="register.html">
+
+                    ثبت نام
+
+                </a>
+
+            </p>
+
+        </div>
+
+    </main>
+
+    <script src="../js/utils.js"></script>
+    <script src="../js/toast.js"></script>
+    <script src="../js/modal.js"></script>
+    <script src="../js/login.js"></script>
+
+</body>
+
+</html>

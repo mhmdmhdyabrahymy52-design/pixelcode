@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>پنل مدیریت | PixelCode</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@4.6.0/fonts/remixicon.css">
+    <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/dashboard.css">
+    <link rel="stylesheet" href="../css/footer.css">
+</head>
+<body>
+
+    <!-- ============================================
+    HEADER
+    ============================================ -->
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <a href="index.html">
+                    <h1 class="logo-title">Pixel<span>Code</span></h1>
+                </a>
+            </div>
+            <nav class="navbar">
+                <ul>
+                    <li><a href="index.html">صفحه اصلی</a></li>
+                    <li><a href="categories.html">دسته‌بندی‌ها</a></li>
+                    <li><a href="media-manager.html">مدیریت فایل‌ها</a></li>
+                    <li><a href="dashboard.html" class="active">پنل مدیریت</a></li>
+                </ul>
+            </nav>
+            <div class="header-buttons">
+                <a href="profile.html" class="profile" id="profileBox">
+                    <img src="../images/avatar-default.svg" class="profile-image" id="profileAvatar">
+                    <div class="profile-info">
+                        <span class="profile-title" id="profileTitle">ادمین</span>
+                        <span class="profile-status" id="profileStatus">مدیر</span>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- ============================================
+    MAIN
+    ============================================ -->
+    <main class="dashboard-page">
+        <div class="container">
+            <div class="dashboard-header">
+                <h1>📊 پنل مدیریت</h1>
+                <p>به پنل مدیریت PixelCode خوش آمدید</p>
+            </div>
+
+            <!-- آمار سریع -->
+            <div class="dashboard-stats">
+                <div class="stat-card">
+                    <span id="pendingPaymentsCount">0</span>
+                    <small>در انتظار تایید</small>
+                </div>
+                <div class="stat-card">
+                    <span id="totalFilesCount">0</span>
+                    <small>کل فایل‌ها</small>
+                </div>
+                <div class="stat-card">
+                    <span id="totalUsersCount">0</span>
+                    <small>کاربران</small>
+                </div>
+                <div class="stat-card">
+                    <span id="totalDownloadsCount">0</span>
+                    <small>دانلودها</small>
+                </div>
+            </div>
+
+            <!-- کارت‌های مدیریت -->
+            <div class="dashboard-grid">
+
+                <!-- تایید پرداخت -->
+                <a href="admin-panel.html" class="dashboard-card" style="border-color: #F59E0B;">
+                    <div class="card-icon">💰</div>
+                    <h2>تایید پرداخت</h2>
+                    <p>مشاهده و تایید کدهای پیگیری واریز کاربران</p>
+                    <span class="card-badge" id="pendingBadge" style="background:#F59E0B;color:#fff;">0</span>
+                </a>
+
+                <!-- مدیریت کاربران -->
+                <a href="users.html" class="dashboard-card">
+                    <div class="card-icon">👥</div>
+                    <h2>مدیریت کاربران</h2>
+                    <p>مشاهده، ویرایش، حذف و مدیریت کاربران سایت</p>
+                </a>
+
+                <!-- مدیریت صفحه اصلی -->
+                <a href="home-manager.html" class="dashboard-card">
+                    <div class="card-icon">🏠</div>
+                    <h2>مدیریت صفحه اصلی</h2>
+                    <p>مدیریت محبوب‌ها، کارت‌ها، بنرها و محتوای صفحه اصلی</p>
+                </a>
+
+                <!-- مدیریت رسانه‌ها -->
+                <a href="media-manager.html" class="dashboard-card">
+                    <div class="card-icon">🖼️</div>
+                    <h2>مدیریت رسانه‌ها</h2>
+                    <p>مدیریت لوگو، تصاویر، آیکون‌ها، بک‌گراندها و فایل‌های سایت</p>
+                </a>
+
+                <!-- مدیریت پشتیبانی -->
+                <a href="support-admin.html" class="dashboard-card">
+                    <div class="card-icon">💬</div>
+                    <h2>مدیریت پشتیبانی</h2>
+                    <p>مشاهده، پاسخ و مدیریت تمام پیام‌ها و تیکت‌های کاربران</p>
+                </a>
+
+            </div>
+
+            <!-- پرداخت‌های اخیر -->
+            <div class="recent-payments">
+                <div class="recent-header">
+                    <h3>📋 آخرین پرداخت‌ها</h3>
+                    <a href="admin-panel.html" class="view-all">مشاهده همه</a>
+                </div>
+                <div class="recent-table-wrapper">
+                    <table class="recent-table">
+                        <thead>
+                            <tr>
+                                <th>نام فایل</th>
+                                <th>مبلغ</th>
+                                <th>کاربر</th>
+                                <th>کد پیگیری</th>
+                                <th>وضعیت</th>
+                            </tr>
+                        </thead>
+                        <tbody id="recentPaymentsBody">
+                            <!-- توسط جاوااسکریپت -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- ============================================
+    TOAST
+    ============================================ -->
+    <div class="toast-container" id="toastContainer"></div>
+
+    <script src="../js/script.js"></script>
+    <script src="../js/footer.js"></script>
+    <script src="../js/dashboard.js"></script>
+</body>
+</html>

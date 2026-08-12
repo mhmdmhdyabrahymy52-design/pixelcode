@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>علاقه‌مندی‌ها | PixelCode</title>
+
+    <!-- Remix Icon -->
+    <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/remixicon@4.6.0/fonts/remixicon.css">
+
+    <!-- Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@100;200;300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../css/style.css">
+
+    <link rel="stylesheet" href="../css/favorites.css">
+
+    <link rel="stylesheet" href="../css/footer.css">
+
+</head>
+
+<body>
+
+    <!-- ============================================
+                    HEADER
+    ============================================= -->
+
+    <header class="header">
+
+        <div class="container">
+
+            <!-- Logo -->
+
+            <div class="logo">
+
+                <a href="index.html">
+
+                    <h1 class="logo-title">
+
+                        Pixel<span>Code</span>
+
+                    </h1>
+
+                </a>
+
+            </div>
+
+
+            <!-- Navigation -->
+
+            <nav class="navbar">
+
+                <ul>
+
+                    <li>
+                        <a href="index.html">
+                            صفحه اصلی
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#">
+                            فایل‌ها
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#">
+                            پروژه‌ها
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="categories.html">
+                            دسته‌بندی‌ها
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="contact.html">
+                            ارتباط با ما
+                        </a>
+                    </li>
+
+                </ul>
+
+            </nav>
+
+
+            <!-- Header Buttons -->
+
+            <div class="header-buttons">
+
+                <!-- Login -->
+
+                <a
+                    href="login.html"
+                    class="login-btn"
+                    id="loginBtn">
+
+                    ورود
+
+                </a>
+
+
+                <!-- Register -->
+
+                <a
+                    href="register.html"
+                    class="signup-btn"
+                    id="registerBtn">
+
+                    ثبت نام
+
+                </a>
+
+
+                <!-- Profile -->
+
+                <a
+                    href="profile.html"
+                    class="profile"
+                    id="profileBox">
+
+                    <img
+                        src="../images/avatar-default.svg"
+                        class="profile-image"
+                        id="profileAvatar"
+                        alt="پروفایل">
+
+                    <div class="profile-info">
+
+                        <span
+                            class="profile-title"
+                            id="profileTitle">
+
+                            پروفایل
+
+                        </span>
+
+                        <span
+                            class="profile-status"
+                            id="profileStatus">
+
+                            ثبت نام نکرده‌ای
+
+                        </span>
+
+                    </div>
+
+                </a>
+
+
+                <!-- Favorites -->
+
+                <a
+                    href="favorites.html"
+                    class="favorites-btn active"
+                    id="favoritesBtn"
+                    title="علاقه‌مندی‌ها">
+
+                    <i class="ri-heart-fill"></i>
+
+                    <span
+                        class="favorites-count"
+                        id="favoritesCount">
+
+                        0
+
+                    </span>
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </header>
+
+
+    <!-- ============================================
+                FAVORITES PAGE
+    ============================================= -->
+
+    <main class="favorites-page">
+
+        <div class="container">
+
+
+            <!-- Page Header -->
+
+            <div class="page-header">
+
+                <span class="page-badge">
+                    ❤️ کتابخانه شخصی
+                </span>
+
+                <h1>
+                    علاقه‌مندی‌های من
+                </h1>
+
+                <p>
+                    فایل‌هایی که از دسته‌بندی‌ها پسندیده‌ای در اینجا قرار می‌گیرند.
+                </p>
+
+            </div>
+
+
+            <!-- Favorites Grid -->
+
+            <div
+                class="favorites-grid"
+                id="favoritesGrid">
+
+            </div>
+
+
+            <!-- Empty -->
+
+            <div
+                class="empty-favorites"
+                id="emptyFavorites"
+                style="display:none;">
+
+                <div class="empty-icon">
+
+                    <i class="ri-heart-3-line"></i>
+
+                </div>
+
+                <h3>
+                    هنوز فایلی به علاقه‌مندی‌ها اضافه نکرده‌ای
+                </h3>
+
+                <p>
+                    از صفحه دسته‌بندی‌ها روی ❤️ فایل موردنظر کلیک کن تا اینجا نمایش داده شود.
+                </p>
+
+                <a
+                    href="categories.html"
+                    class="empty-btn">
+
+                    مشاهده دسته‌بندی‌ها
+
+                    <i class="ri-arrow-left-line"></i>
+
+                </a>
+
+            </div>
+
+
+            <!-- Not Logged In -->
+
+            <div
+                class="login-required"
+                id="loginRequired"
+                style="display:none;">
+
+                <div class="login-required-icon">
+
+                    <i class="ri-user-heart-line"></i>
+
+                </div>
+
+                <h3>
+                    برای مشاهده علاقه‌مندی‌ها وارد شوید
+                </h3>
+
+                <p>
+                    علاقه‌مندی‌های هر حساب به صورت جداگانه ذخیره می‌شود.
+                </p>
+
+                <a
+                    href="login.html"
+                    class="empty-btn">
+
+                    ورود به حساب
+
+                    <i class="ri-login-box-line"></i>
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </main>
+    
+    <!-- Toast -->
+
+    <div
+        class="toast-container"
+        id="toastContainer">
+
+    </div>
+
+
+    <!-- ============================================
+                    SCRIPTS
+    ============================================= -->
+
+    <script src="../js/script.js"></script>
+
+    <script src="../js/footer.js"></script>
+
+    <script src="../js/db.js"></script>
+
+    <script src="../js/favorites.js"></script>
+
+</body>
+
+</html>

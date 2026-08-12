@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>
+
+        PixelCode | مرکز پشتیبانی
+
+    </title>
+
+    <!-- CSS -->
+
+    <link rel="stylesheet" href="../css/support.css">
+
+    <!-- Remix Icon -->
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css">
+
+    <!-- Emoji Picker -->
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/emoji-picker-element@^1/index.css">
+
+</head>
+
+<body>
+
+    <div class="support-page">
+
+        <!--============================
+
+            HERO
+
+=============================-->
+
+        <header class="support-header">
+
+            <div class="header-content">
+
+                <div class="header-text">
+
+                    <h1>
+
+                        مرکز پشتیبانی PixelCode
+
+                    </h1>
+
+                    <p>
+
+                        سوال، پیشنهاد، گزارش باگ یا درخواست خود را برای تیم PixelCode ارسال کنید.
+
+                    </p>
+
+                </div>
+
+                <div class="header-icon">
+
+                    <i class="ri-customer-service-2-fill"></i>
+
+                </div>
+
+            </div>
+
+        </header>
+
+        <!--============================
+
+        MAIN LAYOUT
+
+=============================-->
+
+        <div class="support-layout">
+            <!--====================================
+
+            SIDEBAR
+
+=====================================-->
+
+            <aside class="support-sidebar">
+
+                <div class="sidebar-top">
+
+                    <h2>
+
+                        تیکت‌های من
+
+                    </h2>
+
+                    <button id="newTicketBtn" class="new-ticket-btn" type="button">
+
+                        <i class="ri-add-line"></i>
+
+                        ایجاد تیکت
+
+                    </button>
+
+                </div>
+
+                <!-- Search -->
+
+                <div class="ticket-search">
+
+                    <i class="ri-search-line"></i>
+
+                    <input id="ticketSearch" type="text" placeholder="جستجوی تیکت...">
+
+                </div>
+
+                <!-- Filter -->
+
+                <div class="ticket-filter">
+
+                    <button class="filter-btn active" data-filter="all">
+
+                        همه
+
+                    </button>
+
+                    <button class="filter-btn" data-filter="open">
+
+                        باز
+
+                    </button>
+
+                    <button class="filter-btn" data-filter="answered">
+
+                        پاسخ داده شده
+
+                    </button>
+
+                    <button class="filter-btn" data-filter="closed">
+
+                        بسته شده
+
+                    </button>
+
+                </div>
+
+                <!-- Counter -->
+
+                <div class="ticket-counter">
+
+                    <span>
+
+                        تعداد تیکت‌ها
+
+                    </span>
+
+                    <strong id="ticketCount">
+
+                        0
+
+                    </strong>
+
+                </div>
+
+                <!-- Ticket List -->
+
+                <div id="ticketList" class="ticket-list">
+
+                </div>
+
+            </aside>
+
+            <!--====================================
+
+            CHAT
+
+=====================================-->
+
+            <section class="support-chat">
+                <!--====================================
+
+            CHAT HEADER
+
+=====================================-->
+
+                <div class="chat-header">
+
+                    <div class="chat-user">
+
+                        <div class="support-avatar">
+
+                            <i class="ri-customer-service-2-fill"></i>
+
+                        </div>
+
+                        <div class="support-info">
+
+                            <h2 id="ticketTitle">
+
+                                هیچ تیکتی انتخاب نشده
+
+                            </h2>
+
+                            <div class="support-status">
+
+                                <span class="online-dot"></span>
+
+                                <span id="ticketStatus">
+
+                                    وضعیت : -
+
+                                </span>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <div class="chat-tools">
+
+                        <button id="refreshChat" title="بروزرسانی">
+
+                            <i class="ri-refresh-line"></i>
+
+                        </button>
+
+                        <button id="closeTicket" title="بستن تیکت">
+
+                            <i class="ri-lock-line"></i>
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+                <!--====================================
+
+            CHAT BODY
+
+=====================================-->
+
+                <div id="chatMessages" class="chat-messages">
+
+                    <div class="empty-chat">
+
+                        <i class="ri-message-3-line"></i>
+
+                        <h3>
+
+                            هنوز گفتگویی وجود ندارد
+
+                        </h3>
+
+                        <p>
+
+                            ابتدا یک تیکت ایجاد کنید یا
+                            یکی از تیکت‌های خود را انتخاب نمایید.
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+                <!--====================================
+
+        REPLY BOX
+
+=====================================-->
+
+                <div id="replyPreview" class="reply-preview hidden">
+
+                    <div class="reply-text">
+
+                        <strong>
+
+                            پاسخ به
+
+                        </strong>
+
+                        <span id="replyContent">
+
+                        </span>
+
+                    </div>
+
+                    <button id="cancelReply" type="button" title="لغو پاسخ">
+
+                        <i class="ri-close-line" aria-hidden="true"></i>
+
+                        <span class="sr-only">
+                            لغو پاسخ
+                        </span>
+
+                    </button>
+
+                </div>
+
+                <!--====================================
+
+        SELECTED FILES
+
+=====================================-->
+
+                <div id="selectedFiles" class="selected-files">
+
+                </div>
+                <!--====================================
+
+        CHAT FOOTER
+
+=====================================-->
+
+                <div class="chat-footer">
+
+                    <!-- ابزارها -->
+
+                    <div class="message-tools">
+
+                        <!-- Emoji -->
+
+                        <button id="emojiBtn" class="tool-btn" type="button" title="استیکر">
+
+                            <i class="ri-emotion-happy-line"></i>
+
+                        </button>
+
+                        <!-- Emoji Picker -->
+
+                        <div id="emojiPicker" class="emoji-picker">
+
+                        </div>
+
+                        <!-- ارسال تصویر -->
+
+                        <label class="tool-btn" title="ارسال تصویر">
+
+                            <i class="ri-image-line"></i>
+
+                            <input id="imageInput" type="file" accept="image/*" hidden>
+
+                        </label>
+
+                        <!-- ارسال فایل -->
+
+                        <label class="tool-btn" title="ارسال فایل">
+
+                            <i class="ri-attachment-2"></i>
+
+                            <input id="fileInput" type="file" hidden>
+
+                        </label>
+
+                    </div>
+
+                    <!-- نوشتن پیام -->
+
+                    <div class="message-input">
+
+                        <textarea id="messageInput" placeholder="پیام خود را بنویسید..." rows="2"></textarea>
+
+                    </div>
+
+                    <!-- دکمه ارسال -->
+
+                    <button id="sendMessageBtn" class="send-btn" type="button" title="ارسال پیام"
+                        aria-label="ارسال پیام">
+
+                        <i class="ri-send-plane-fill"></i>
+
+                    </button>
+
+                </div>
+
+            </section>
+
+        </div>
+
+        <!--====================================
+
+        NEW TICKET MODAL
+
+=====================================-->
+
+        <div id="newTicketModal" class="modal">
+
+            <div class="modal-box">
+
+                <!-- Header -->
+
+                <div class="modal-header">
+
+                    <h2>
+
+                        ایجاد تیکت جدید
+
+                    </h2>
+
+                    <button id="closeModal" class="close-modal" type="button" title="بستن" aria-label="بستن">
+
+                        <i class="ri-close-line"></i>
+
+                    </button>
+
+                </div>
+
+                <!-- Body -->
+
+                <div class="modal-body">
+
+                    <!-- عنوان -->
+
+                    <div class="form-group">
+
+                        <label>
+
+                            عنوان تیکت
+
+                        </label>
+
+                        <input id="ticketTitleInput" type="text" maxlength="100" placeholder="عنوان تیکت...">
+
+                    </div>
+
+                    <!-- دسته بندی -->
+
+                    <div class="form-group">
+
+                        <label for="ticketCategory">
+
+                            دسته‌بندی
+
+                        </label>
+
+                        <select id="ticketCategory" aria-label="دسته بندی تیکت">
+
+                            <option value="عمومی">
+
+                                عمومی
+
+                            </option>
+
+                            <option value="پشتیبانی">
+
+                                پشتیبانی
+
+                            </option>
+
+                            <option value="قالب CSS">
+
+                                قالب CSS
+
+                            </option>
+
+                            <option value="لوگو">
+
+                                لوگو
+
+                            </option>
+
+                            <option value="بک گراند">
+
+                                بک گراند
+
+                            </option>
+
+                            <option value="گزارش باگ">
+
+                                گزارش باگ
+
+                            </option>
+
+                        </select>
+
+                    </div>
+
+                    <!-- اولویت -->
+
+                    <div class="form-group">
+
+                        <label for="ticketPriority">
+
+                            اولویت
+
+                        </label>
+
+                        <select id="ticketPriority" aria-label="اولویت تیکت">
+
+                            <option value="کم">
+
+                                کم
+
+                            </option>
+
+                            <option value="متوسط">
+
+                                متوسط
+
+                            </option>
+
+                            <option value="زیاد">
+
+                                زیاد
+
+                            </option>
+
+                            <option value="فوری">
+
+                                فوری
+
+                            </option>
+
+                        </select>
+
+                    </div>
+
+                    <!-- توضیحات -->
+
+                    <div class="form-group">
+
+                        <label>
+
+                            توضیحات
+
+                        </label>
+
+                        <textarea id="ticketDescription" rows="8"
+                            placeholder="مشکل خود را کامل توضیح دهید..."></textarea>
+
+                    </div>
+
+                </div>
+
+                <!-- Footer -->
+
+                <div class="modal-footer">
+
+                    <button id="cancelTicket" class="cancel-btn" type="button">
+
+                        انصراف
+
+                    </button>
+
+                    <button id="createTicket" class="create-btn" type="button">
+
+                        <i class="ri-add-circle-line"></i>
+
+                        ایجاد تیکت
+
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- JavaScript -->
+
+        <script src="../js/support.js"></script>
+
+        
+
+</body>
+
+</html>

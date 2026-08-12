@@ -1,0 +1,781 @@
+/* ===========================
+        Font
+=========================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@100..900&display=swap');
+
+/* ===========================
+        Reset
+=========================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Vazirmatn',sans-serif;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    direction:rtl;
+    background:#0F172A;
+    color:#fff;
+    overflow-x:hidden;
+}
+
+a{
+    text-decoration:none;
+    color:inherit;
+}
+
+ul{
+    list-style:none;
+}
+
+img{
+    max-width:100%;
+    display:block;
+}
+
+/* ===========================
+        Container
+=========================== */
+
+.container{
+    width:90%;
+    max-width:1400px;
+    margin:auto;
+}
+
+/* ===========================
+        Header
+=========================== */
+
+.header{
+    width:100%;
+    height:90px;
+    background:rgba(15,23,42,.75);
+    -webkit-backdrop-filter: blur(12px);
+    backdrop-filter: blur(12px);
+    border-bottom:1px solid rgba(255,255,255,.08);
+    position:sticky;
+    top:0;
+    z-index:1000;
+}
+
+.header .container{
+    height:100%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+/* ===========================
+            Logo
+=========================== */
+
+.logo-title{
+    font-size:34px;
+    font-weight:900;
+    color:#ffffff;
+    cursor:pointer;
+    -webkit-user-select: none;
+    user-select: none;
+    transition:transform .35s ease;
+    animation:
+    logoAnimation .8s ease forwards,
+    logoGlow 2.5s ease-in-out infinite;
+}
+
+.logo-title span{
+    color:#3B82F6;
+}
+
+.logo-title:hover{
+    transform:translateY(0) scale(1.08);
+}
+
+/* ===========================
+          Navigation
+=========================== */
+
+.navbar ul{
+    display:flex;
+    align-items:center;
+    gap:35px;
+}
+
+.navbar a{
+    position:relative;
+    font-size:16px;
+    font-weight:500;
+    color:#E2E8F0;
+    transition:.3s ease;
+}
+
+.navbar a:hover{
+    color:#3B82F6;
+}
+
+.navbar a::after{
+    content:"";
+    position:absolute;
+    left:50%;
+    bottom:-8px;
+    transform:translateX(-50%);
+    width:0;
+    height:2px;
+    background:#3B82F6;
+    border-radius:50px;
+    transition:.35s ease;
+}
+
+.navbar a:hover::after{
+    width:100%;
+}
+
+/* ===========================
+            Buttons
+=========================== */
+
+.header-buttons{
+    display:flex;
+    align-items:center;
+    gap:15px;
+}
+
+.login-btn,
+.signup-btn{
+    padding:12px 28px;
+    border-radius:12px;
+    font-size:15px;
+    font-weight:600;
+    transition:.35s ease;
+}
+
+.login-btn{
+    border:1px solid #3B82F6;
+}
+
+.login-btn:hover{
+    background:#3B82F6;
+    box-shadow:
+    0 0 15px rgba(59,130,246,.6),
+    0 0 35px rgba(59,130,246,.3);
+}
+
+.signup-btn{
+    background:#3B82F6;
+}
+
+.signup-btn:hover{
+    transform:translateY(-5px);
+    box-shadow:
+    0 0 20px rgba(59,130,246,.7),
+    0 0 45px rgba(59,130,246,.4);
+}
+
+/* ===========================
+            Hero
+=========================== */
+
+.hero{
+    min-height:calc(100vh - 90px);
+    display:flex;
+    align-items:center;
+    position:relative;
+    overflow:hidden;
+    padding:2rem 0;
+}
+
+.hero .container{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.hero-content{
+    width:750px;
+    text-align:center;
+    position:relative;
+    z-index:2;
+}
+
+.hero-badge{
+    display:inline-block;
+    padding:12px 22px;
+    border:1px solid rgba(59,130,246,.35);
+    border-radius:50px;
+    background:rgba(59,130,246,.08);
+    color:#60A5FA;
+    font-size:15px;
+    margin-bottom:30px;
+    -webkit-backdrop-filter: blur(12px);
+    backdrop-filter:blur(12px);
+    animation:badgeFloat 3s ease-in-out infinite;
+}
+
+.hero-title{
+    font-size:68px;
+    font-weight:900;
+    line-height:1.3;
+    margin-bottom:25px;
+    animation:titleUp .9s ease;
+}
+
+.hero-text{
+    font-size:19px;
+    color:#94A3B8;
+    line-height:2;
+    margin-bottom:45px;
+}
+
+.hero-buttons{
+    display:flex;
+    justify-content:center;
+    gap:20px;
+    flex-wrap:wrap;
+}
+
+.hero-btn-primary,
+.hero-btn-secondary{
+    padding:16px 35px;
+    border-radius:14px;
+    transition:.35s ease;
+}
+
+.hero-btn-primary{
+    background:#3B82F6;
+}
+
+.hero-btn-primary:hover{
+    transform:translateY(-6px);
+    box-shadow:
+    0 0 20px rgba(59,130,246,.7),
+    0 0 45px rgba(59,130,246,.4);
+}
+
+.hero-btn-secondary{
+    border:1px solid rgba(255,255,255,.15);
+}
+
+.hero-btn-secondary:hover{
+    color:#3B82F6;
+    border-color:#3B82F6;
+}
+
+/* ===========================
+        Profile Header
+=========================== */
+
+.profile{
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    cursor: pointer;
+    transition: .3s;
+    text-decoration: none;
+}
+
+.profile:hover{
+    transform: translateY(-2px);
+}
+
+.profile-image{
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    border: 2px solid #3B82F6;
+    object-fit: cover;
+    flex-shrink: 0;
+}
+
+.profile-info{
+    display: flex;
+    flex-direction: column;
+    line-height: 1.2;
+}
+
+.profile-title{
+    font-size: 16px;
+    font-weight: 700;
+    color: #fff;
+}
+
+.profile-status{
+    font-size: 12px;
+    color: #94A3B8;
+    margin-top: 3px;
+}
+
+/* ===========================
+      Popular Files
+=========================== */
+
+.popular-files{
+    padding:120px 0;
+}
+
+.section-header{
+    text-align:center;
+    margin-bottom:70px;
+}
+
+.section-title{
+    font-size:42px;
+    font-weight:900;
+    margin-bottom:15px;
+}
+
+.section-text{
+    font-size:18px;
+    color:#94A3B8;
+}
+
+.files-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:30px;
+}
+
+.file-card{
+    background:#172036;
+    border:1px solid rgba(255,255,255,.08);
+    border-radius:22px;
+    overflow:hidden;
+    transition:.4s ease;
+    cursor:pointer;
+}
+
+.file-card:hover{
+    transform:translateY(-12px);
+    border-color:#3B82F6;
+    box-shadow:
+    0 0 20px rgba(59,130,246,.25),
+    0 0 45px rgba(59,130,246,.12);
+}
+
+.file-card img{
+    width:100%;
+    height:240px;
+    object-fit:cover;
+    display:block;
+}
+
+.file-info{
+    padding:25px;
+}
+
+.file-type{
+    display:inline-block;
+    background:rgba(59,130,246,.12);
+    color:#60A5FA;
+    padding:8px 16px;
+    border-radius:30px;
+    font-size:13px;
+    margin-bottom:18px;
+}
+
+.file-info h3{
+    font-size:24px;
+    margin-bottom:18px;
+}
+
+.file-price{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:25px;
+}
+
+.file-price span{
+    font-size:18px;
+    font-weight:700;
+}
+
+.free{
+    color:#22C55E;
+}
+
+.file-btn{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    width:100%;
+    height:52px;
+    background:#3B82F6;
+    border-radius:12px;
+    transition:.35s ease;
+}
+
+.file-btn:hover{
+    background:#2563EB;
+    transform:translateY(-3px);
+}
+
+/* ===========================
+        Animations
+=========================== */
+
+@keyframes badgeFloat{
+    0%{
+        transform:translateY(0);
+    }
+    50%{
+        transform:translateY(-10px);
+    }
+    100%{
+        transform:translateY(0);
+    }
+}
+
+@keyframes titleUp{
+    from{
+        opacity:0;
+        transform:translateY(50px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+@keyframes logoAnimation{
+    from{
+        opacity:0;
+        transform:translateY(-40px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+@keyframes logoGlow{
+    0%{
+        text-shadow:
+        0 0 5px rgba(59,130,246,.4),
+        0 0 10px rgba(59,130,246,.3);
+    }
+    50%{
+        text-shadow:
+        0 0 15px rgba(59,130,246,.9),
+        0 0 35px rgba(59,130,246,.8),
+        0 0 55px rgba(59,130,246,.6);
+    }
+    100%{
+        text-shadow:
+        0 0 5px rgba(59,130,246,.4),
+        0 0 10px rgba(59,130,246,.3);
+    }
+}
+
+/* ===========================
+        RESPONSIVE
+=========================== */
+
+/* ===== تبلت ===== */
+@media (max-width: 1024px) {
+    .hero-title{
+        font-size: 52px;
+    }
+    
+    .files-grid{
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .section-title{
+        font-size: 36px;
+    }
+}
+
+/* ===== موبایل بزرگ ===== */
+@media (max-width: 768px) {
+    /* Header */
+    .header{
+        height: auto;
+        padding: 12px 0;
+    }
+    
+    .header .container{
+        flex-wrap: wrap;
+        gap: 10px;
+        justify-content: center;
+    }
+    
+    .logo-title{
+        font-size: 26px;
+    }
+    
+    /* Navigation */
+    .navbar{
+        width: 100%;
+        order: 3;
+    }
+    
+    .navbar ul{
+        justify-content: center;
+        gap: 15px;
+        flex-wrap: wrap;
+    }
+    
+    .navbar a{
+        font-size: 14px;
+        padding: 4px 0;
+    }
+    
+    .navbar a::after{
+        bottom: -4px;
+    }
+    
+    /* Header Buttons */
+    .header-buttons{
+        gap: 10px;
+    }
+    
+    .login-btn,
+    .signup-btn{
+        padding: 8px 18px;
+        font-size: 13px;
+    }
+    
+    /* Profile */
+    .profile-image{
+        width: 38px;
+        height: 38px;
+    }
+    
+    .profile-title{
+        font-size: 14px;
+    }
+    
+    .profile-status{
+        font-size: 10px;
+    }
+    
+    /* Hero */
+    .hero{
+        min-height: auto;
+        padding: 60px 0;
+    }
+    
+    .hero-title{
+        font-size: 36px;
+    }
+    
+    .hero-text{
+        font-size: 16px;
+        margin-bottom: 30px;
+    }
+    
+    .hero-badge{
+        font-size: 13px;
+        padding: 8px 16px;
+        margin-bottom: 20px;
+    }
+    
+    .hero-btn-primary,
+    .hero-btn-secondary{
+        padding: 12px 24px;
+        font-size: 14px;
+    }
+    
+    /* Popular Files */
+    .popular-files{
+        padding: 60px 0;
+    }
+    
+    .section-header{
+        margin-bottom: 40px;
+    }
+    
+    .section-title{
+        font-size: 28px;
+    }
+    
+    .section-text{
+        font-size: 15px;
+    }
+    
+    .files-grid{
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+    }
+    
+    .file-card img{
+        height: 180px;
+    }
+    
+    .file-info{
+        padding: 18px;
+    }
+    
+    .file-info h3{
+        font-size: 18px;
+        margin-bottom: 12px;
+    }
+    
+    .file-price span{
+        font-size: 15px;
+    }
+    
+    .file-btn{
+        height: 44px;
+        font-size: 14px;
+    }
+    
+    .file-type{
+        font-size: 11px;
+        padding: 6px 12px;
+        margin-bottom: 12px;
+    }
+}
+
+/* ===== موبایل کوچک ===== */
+@media (max-width: 480px) {
+    .container{
+        width: 95%;
+    }
+    
+    /* Header */
+    .logo-title{
+        font-size: 20px;
+    }
+    
+    .navbar ul{
+        gap: 10px;
+    }
+    
+    .navbar a{
+        font-size: 12px;
+    }
+    
+    .login-btn,
+    .signup-btn{
+        padding: 6px 14px;
+        font-size: 11px;
+        border-radius: 8px;
+    }
+    
+    .profile-image{
+        width: 32px;
+        height: 32px;
+    }
+    
+    .profile-title{
+        font-size: 12px;
+    }
+    
+    .profile-status{
+        font-size: 9px;
+    }
+    
+    .profile-info{
+        display: none;
+    }
+    
+    /* Hero */
+    .hero-title{
+        font-size: 26px;
+    }
+    
+    .hero-text{
+        font-size: 14px;
+        line-height: 1.8;
+    }
+    
+    .hero-badge{
+        font-size: 11px;
+        padding: 6px 12px;
+    }
+    
+    .hero-btn-primary,
+    .hero-btn-secondary{
+        padding: 10px 18px;
+        font-size: 13px;
+        border-radius: 10px;
+        width: 100%;
+        justify-content: center;
+    }
+    
+    .hero-buttons{
+        flex-direction: column;
+        align-items: center;
+        gap: 12px;
+    }
+    
+    /* Popular Files */
+    .popular-files{
+        padding: 40px 0;
+    }
+    
+    .section-title{
+        font-size: 22px;
+    }
+    
+    .section-text{
+        font-size: 13px;
+    }
+    
+    .section-header{
+        margin-bottom: 30px;
+    }
+    
+    .files-grid{
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+    
+    .file-card img{
+        height: 160px;
+    }
+    
+    .file-info{
+        padding: 14px;
+    }
+    
+    .file-info h3{
+        font-size: 16px;
+    }
+    
+    .file-price span{
+        font-size: 14px;
+    }
+    
+    .file-btn{
+        height: 40px;
+        font-size: 13px;
+    }
+}
+
+/* ===== سایزهای خیلی کوچک ===== */
+@media (max-width: 360px) {
+    .logo-title{
+        font-size: 17px;
+    }
+    
+    .navbar ul{
+        gap: 6px;
+    }
+    
+    .navbar a{
+        font-size: 10px;
+    }
+    
+    .login-btn,
+    .signup-btn{
+        padding: 4px 10px;
+        font-size: 10px;
+    }
+    
+    .hero-title{
+        font-size: 22px;
+    }
+    
+    .hero-text{
+        font-size: 13px;
+    }
+}

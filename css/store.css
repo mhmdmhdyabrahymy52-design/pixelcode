@@ -1,0 +1,1656 @@
+/* =========================================
+        PIXELCODE STORE
+        TOKENS + SUBSCRIPTION
+========================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+
+    --bg:
+        #050b18;
+
+    --bg-light:
+        #0b1427;
+
+    --card:
+        rgba(20, 34, 60, 0.72);
+
+    --card-solid:
+        #111d34;
+
+    --border:
+        rgba(80, 150, 255, 0.22);
+
+    --blue:
+        #3185ff;
+
+    --blue-light:
+        #5da2ff;
+
+    --purple:
+        #9b6cff;
+
+    --cyan:
+        #38d9ff;
+
+    --gold:
+        #ffc928;
+
+    --green:
+        #25d69b;
+
+    --red:
+        #ff5575;
+
+    --text:
+        #f4f7ff;
+
+    --text-soft:
+        #9aa9c4;
+
+    --radius:
+        22px;
+}
+
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+body {
+
+    min-height: 100vh;
+
+    font-family:
+        "Vazirmatn",
+        Tahoma,
+        Arial,
+        sans-serif;
+
+    color: var(--text);
+
+    background:
+
+        radial-gradient(
+            circle at 15% 10%,
+            rgba(49, 133, 255, 0.13),
+            transparent 28%
+        ),
+
+        radial-gradient(
+            circle at 85% 15%,
+            rgba(155, 108, 255, 0.12),
+            transparent 30%
+        ),
+
+        linear-gradient(
+            135deg,
+            #030815,
+            #071124,
+            #030815
+        );
+
+    overflow-x: hidden;
+}
+
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+
+/* =========================================
+            HEADER
+========================================= */
+
+.site-header {
+
+    position: sticky;
+
+    top: 0;
+
+    z-index: 100;
+
+    height: 88px;
+
+    background:
+        rgba(4, 10, 24, 0.86);
+
+    backdrop-filter:
+        blur(20px);
+
+    border-bottom:
+        1px solid rgba(90, 150, 255, 0.12);
+}
+
+
+.header-container {
+
+    width:
+        min(1400px, 94%);
+
+    height: 100%;
+
+    margin:
+        auto;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        space-between;
+
+    gap:
+        30px;
+}
+
+
+.logo {
+
+    font-size:
+        34px;
+
+    font-weight:
+        900;
+
+    letter-spacing:
+        -1.5px;
+
+    white-space:
+        nowrap;
+}
+
+
+.logo span {
+    color:
+        var(--blue);
+}
+
+
+.main-nav {
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    gap:
+        28px;
+
+    flex:
+        1;
+
+    justify-content:
+        center;
+}
+
+
+.main-nav a {
+
+    color:
+        var(--text-soft);
+
+    font-size:
+        15px;
+
+    font-weight:
+        700;
+
+    transition:
+        0.25s ease;
+}
+
+
+.main-nav a:hover {
+
+    color:
+        white;
+
+    transform:
+        translateY(-2px);
+}
+
+
+.header-actions {
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    gap:
+        10px;
+}
+
+
+.subscription-button,
+.token-button,
+.profile-button {
+
+    min-height:
+        46px;
+
+    padding:
+        0 17px;
+
+    border:
+        1px solid var(--border);
+
+    border-radius:
+        13px;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    gap:
+        8px;
+
+    background:
+        rgba(19, 34, 60, 0.8);
+
+    color:
+        #dce8ff;
+
+    transition:
+        0.25s ease;
+}
+
+
+.subscription-button i {
+    color:
+        #c6a4ff;
+
+    font-size:
+        19px;
+}
+
+
+.token-button i {
+
+    color:
+        var(--gold);
+
+    font-size:
+        18px;
+}
+
+
+.token-button strong {
+
+    color:
+        var(--gold);
+}
+
+
+.subscription-button:hover,
+.token-button:hover,
+.profile-button:hover {
+
+    border-color:
+        rgba(70, 150, 255, 0.55);
+
+    transform:
+        translateY(-2px);
+
+    background:
+        rgba(28, 48, 82, 0.95);
+}
+
+
+.active {
+
+    border-color:
+        rgba(70, 150, 255, 0.7);
+
+    box-shadow:
+        0 0 25px rgba(49, 133, 255, 0.12);
+}
+
+
+/* =========================================
+            MAIN
+========================================= */
+
+.store-page {
+
+    width:
+        min(1280px, 92%);
+
+    margin:
+        auto;
+
+    padding:
+        70px 0 100px;
+}
+
+
+/* =========================================
+            HERO
+========================================= */
+
+.store-hero {
+
+    text-align:
+        center;
+
+    max-width:
+        750px;
+
+    margin:
+        0 auto 55px;
+}
+
+
+.hero-icon {
+
+    width:
+        80px;
+
+    height:
+        80px;
+
+    margin:
+        0 auto 20px;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    border:
+        1px solid rgba(255, 201, 40, 0.35);
+
+    border-radius:
+        24px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255, 201, 40, 0.16),
+            rgba(255, 170, 0, 0.05)
+        );
+
+    box-shadow:
+        0 0 45px rgba(255, 201, 40, 0.08);
+}
+
+
+.hero-icon i {
+
+    color:
+        var(--gold);
+
+    font-size:
+        38px;
+}
+
+
+.subscription-icon {
+
+    border-color:
+        rgba(155, 108, 255, 0.4);
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(155, 108, 255, 0.18),
+            rgba(49, 133, 255, 0.05)
+        );
+}
+
+
+.subscription-icon i {
+
+    color:
+        #bd9cff;
+}
+
+
+.hero-label {
+
+    display:
+        inline-block;
+
+    margin-bottom:
+        12px;
+
+    color:
+        var(--blue-light);
+
+    font-size:
+        14px;
+
+    font-weight:
+        800;
+}
+
+
+.store-hero h1 {
+
+    font-size:
+        clamp(35px, 5vw, 58px);
+
+    line-height:
+        1.2;
+
+    margin-bottom:
+        16px;
+
+    font-weight:
+        900;
+}
+
+
+.store-hero p {
+
+    color:
+        var(--text-soft);
+
+    font-size:
+        16px;
+
+    line-height:
+        2;
+}
+
+
+/* =========================================
+            BALANCE
+========================================= */
+
+.current-balance {
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    gap:
+        20px;
+
+    padding:
+        25px 28px;
+
+    margin-bottom:
+        65px;
+
+    border:
+        1px solid var(--border);
+
+    border-radius:
+        var(--radius);
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(24, 43, 76, 0.8),
+            rgba(12, 25, 48, 0.75)
+        );
+
+    box-shadow:
+        0 20px 70px rgba(0, 0, 0, 0.2);
+}
+
+
+.balance-icon {
+
+    width:
+        60px;
+
+    height:
+        60px;
+
+    border-radius:
+        17px;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    background:
+        rgba(255, 201, 40, 0.1);
+
+    border:
+        1px solid rgba(255, 201, 40, 0.25);
+}
+
+
+.balance-icon i {
+
+    color:
+        var(--gold);
+
+    font-size:
+        28px;
+}
+
+
+.balance-info {
+
+    display:
+        flex;
+
+    flex-direction:
+        column;
+
+    gap:
+        5px;
+
+    flex:
+        1;
+}
+
+
+.balance-info span {
+
+    color:
+        var(--text-soft);
+
+    font-size:
+        13px;
+}
+
+
+.balance-info strong {
+
+    font-size:
+        27px;
+
+    color:
+        white;
+}
+
+
+.balance-info small {
+
+    color:
+        var(--gold);
+
+    font-size:
+        13px;
+}
+
+
+.balance-link {
+
+    padding:
+        12px 18px;
+
+    border:
+        1px solid var(--border);
+
+    border-radius:
+        12px;
+
+    color:
+        var(--blue-light);
+
+    transition:
+        0.25s;
+}
+
+
+.balance-link:hover {
+
+    background:
+        rgba(49, 133, 255, 0.08);
+
+    border-color:
+        rgba(49, 133, 255, 0.45);
+}
+
+
+/* =========================================
+            TITLES
+========================================= */
+
+.section-title {
+
+    margin-bottom:
+        28px;
+}
+
+
+.section-title span {
+
+    color:
+        var(--blue-light);
+
+    font-size:
+        13px;
+
+    font-weight:
+        800;
+}
+
+
+.section-title h2 {
+
+    margin-top:
+        7px;
+
+    font-size:
+        27px;
+
+    font-weight:
+        900;
+}
+
+
+/* =========================================
+            TOKEN CARDS
+========================================= */
+
+.packages-grid {
+
+    display:
+        grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap:
+        18px;
+}
+
+
+.token-card {
+
+    position:
+        relative;
+
+    padding:
+        28px;
+
+    min-height:
+        410px;
+
+    border:
+        1px solid var(--border);
+
+    border-radius:
+        var(--radius);
+
+    background:
+        linear-gradient(
+            160deg,
+            rgba(22, 39, 68, 0.9),
+            rgba(10, 21, 42, 0.9)
+        );
+
+    overflow:
+        hidden;
+
+    transition:
+        0.3s ease;
+}
+
+
+.token-card::before {
+
+    content:
+        "";
+
+    position:
+        absolute;
+
+    width:
+        150px;
+
+    height:
+        150px;
+
+    top:
+        -70px;
+
+    left:
+        -70px;
+
+    border-radius:
+        50%;
+
+    background:
+        rgba(49, 133, 255, 0.12);
+
+    filter:
+        blur(20px);
+}
+
+
+.token-card:hover {
+
+    transform:
+        translateY(-8px);
+
+    border-color:
+        rgba(49, 133, 255, 0.5);
+
+    box-shadow:
+        0 25px 60px rgba(0, 0, 0, 0.3);
+}
+
+
+.token-card.popular {
+
+    border-color:
+        rgba(49, 133, 255, 0.65);
+
+    box-shadow:
+        0 0 45px rgba(49, 133, 255, 0.08);
+}
+
+
+.popular-label {
+
+    position:
+        absolute;
+
+    top:
+        17px;
+
+    left:
+        17px;
+
+    padding:
+        6px 11px;
+
+    border-radius:
+        8px;
+
+    color:
+        #dcecff;
+
+    background:
+        rgba(49, 133, 255, 0.14);
+
+    border:
+        1px solid rgba(49, 133, 255, 0.25);
+
+    font-size:
+        11px;
+
+    font-weight:
+        800;
+}
+
+
+.token-card-top {
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        space-between;
+
+    margin-bottom:
+        28px;
+}
+
+
+.package-icon {
+
+    width:
+        53px;
+
+    height:
+        53px;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    border-radius:
+        15px;
+
+    background:
+        rgba(49, 133, 255, 0.1);
+
+    border:
+        1px solid rgba(49, 133, 255, 0.25);
+}
+
+
+.package-icon i {
+
+    color:
+        var(--blue-light);
+
+    font-size:
+        25px;
+}
+
+
+.package-tag {
+
+    padding:
+        6px 11px;
+
+    border-radius:
+        8px;
+
+    color:
+        var(--text-soft);
+
+    background:
+        rgba(255, 255, 255, 0.04);
+
+    font-size:
+        11px;
+}
+
+
+.token-card h3,
+.subscription-card h3 {
+
+    font-size:
+        20px;
+
+    margin-bottom:
+        16px;
+}
+
+
+.token-count {
+
+    font-size:
+        44px;
+
+    font-weight:
+        900;
+
+    color:
+        white;
+}
+
+
+.token-count span {
+
+    font-size:
+        13px;
+
+    color:
+        var(--gold);
+
+    font-weight:
+        700;
+}
+
+
+.package-description {
+
+    color:
+        var(--text-soft);
+
+    font-size:
+        13px;
+
+    margin:
+        8px 0 28px;
+}
+
+
+.package-price {
+
+    display:
+        flex;
+
+    align-items:
+        baseline;
+
+    gap:
+        6px;
+
+    margin-bottom:
+        22px;
+}
+
+
+.package-price strong {
+
+    font-size:
+        23px;
+}
+
+
+.package-price span {
+
+    color:
+        var(--text-soft);
+
+    font-size:
+        12px;
+}
+
+
+.buy-button,
+.subscription-buy {
+
+    width:
+        100%;
+
+    height:
+        52px;
+
+    border:
+        0;
+
+    border-radius:
+        13px;
+
+    cursor:
+        pointer;
+
+    color:
+        white;
+
+    font-family:
+        inherit;
+
+    font-size:
+        14px;
+
+    font-weight:
+        800;
+
+    background:
+        linear-gradient(
+            135deg,
+            #287cf0,
+            #536cff
+        );
+
+    box-shadow:
+        0 10px 25px rgba(49, 133, 255, 0.18);
+
+    transition:
+        0.25s;
+}
+
+
+.buy-button:hover,
+.subscription-buy:hover {
+
+    transform:
+        translateY(-2px);
+
+    box-shadow:
+        0 15px 30px rgba(49, 133, 255, 0.3);
+}
+
+
+/* =========================================
+            INFO
+========================================= */
+
+.store-info {
+
+    display:
+        grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap:
+        18px;
+
+    margin-top:
+        45px;
+}
+
+
+.info-item {
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    gap:
+        15px;
+
+    padding:
+        22px;
+
+    border:
+        1px solid var(--border);
+
+    border-radius:
+        17px;
+
+    background:
+        rgba(15, 28, 50, 0.65);
+}
+
+
+.info-item > i {
+
+    font-size:
+        25px;
+
+    color:
+        var(--blue-light);
+}
+
+
+.info-item div {
+
+    display:
+        flex;
+
+    flex-direction:
+        column;
+
+    gap:
+        5px;
+}
+
+
+.info-item strong {
+    font-size:
+        14px;
+}
+
+
+.info-item span {
+
+    color:
+        var(--text-soft);
+
+    font-size:
+        11px;
+
+    line-height:
+        1.8;
+}
+
+
+/* =========================================
+            SUBSCRIPTION
+========================================= */
+
+.subscription-grid {
+
+    display:
+        grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap:
+        20px;
+}
+
+
+.subscription-card {
+
+    position:
+        relative;
+
+    padding:
+        30px;
+
+    border:
+        1px solid var(--border);
+
+    border-radius:
+        var(--radius);
+
+    background:
+        linear-gradient(
+            150deg,
+            rgba(22, 39, 68, 0.9),
+            rgba(10, 21, 42, 0.9)
+        );
+
+    overflow:
+        hidden;
+
+    transition:
+        0.3s;
+}
+
+
+.subscription-card:hover {
+
+    transform:
+        translateY(-7px);
+
+    border-color:
+        rgba(49, 133, 255, 0.5);
+}
+
+
+.subscription-card.featured {
+
+    border-color:
+        rgba(155, 108, 255, 0.65);
+
+    box-shadow:
+        0 0 55px rgba(155, 108, 255, 0.08);
+}
+
+
+.plan-ribbon {
+
+    position:
+        absolute;
+
+    top:
+        18px;
+
+    left:
+        18px;
+
+    padding:
+        7px 12px;
+
+    border-radius:
+        8px;
+
+    color:
+        #d6c3ff;
+
+    background:
+        rgba(155, 108, 255, 0.12);
+
+    border:
+        1px solid rgba(155, 108, 255, 0.3);
+
+    font-size:
+        11px;
+
+    font-weight:
+        800;
+}
+
+
+.subscription-head {
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        space-between;
+
+    margin-bottom:
+        28px;
+}
+
+
+.subscription-head > span {
+
+    color:
+        var(--text-soft);
+
+    font-size:
+        12px;
+}
+
+
+.subscription-price {
+
+    display:
+        flex;
+
+    align-items:
+        baseline;
+
+    gap:
+        7px;
+
+    margin:
+        15px 0 25px;
+}
+
+
+.subscription-price strong {
+
+    font-size:
+        34px;
+}
+
+
+.subscription-price span {
+
+    color:
+        var(--text-soft);
+
+    font-size:
+        12px;
+}
+
+
+.features {
+
+    list-style:
+        none;
+
+    display:
+        flex;
+
+    flex-direction:
+        column;
+
+    gap:
+        14px;
+
+    margin-bottom:
+        30px;
+}
+
+
+.features li {
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    gap:
+        10px;
+
+    color:
+        #c4d0e5;
+
+    font-size:
+        13px;
+}
+
+
+.features i {
+
+    color:
+        var(--green);
+
+    font-size:
+        18px;
+}
+
+
+/* =========================================
+            COMPARISON
+========================================= */
+
+.comparison-section {
+
+    margin-top:
+        75px;
+}
+
+
+.comparison-table {
+
+    overflow:
+        hidden;
+
+    border:
+        1px solid var(--border);
+
+    border-radius:
+        var(--radius);
+
+    background:
+        rgba(12, 25, 47, 0.8);
+}
+
+
+.comparison-row {
+
+    display:
+        grid;
+
+    grid-template-columns:
+        2fr 1fr 1fr;
+
+    min-height:
+        62px;
+
+    align-items:
+        center;
+
+    border-bottom:
+        1px solid rgba(100, 150, 220, 0.09);
+}
+
+
+.comparison-row:last-child {
+    border-bottom:
+        0;
+}
+
+
+.comparison-row span,
+.comparison-row i {
+
+    text-align:
+        center;
+}
+
+
+.comparison-row span:first-child {
+
+    text-align:
+        right;
+
+    padding-right:
+        25px;
+
+    color:
+        #d8e4fa;
+}
+
+
+.header-row {
+
+    background:
+        rgba(49, 133, 255, 0.08);
+
+    font-weight:
+        800;
+}
+
+
+.comparison-row i {
+
+    color:
+        var(--green);
+
+    font-size:
+        19px;
+}
+
+
+.comparison-row .muted {
+
+    color:
+        #64728a;
+}
+
+
+/* =========================================
+            NOTE
+========================================= */
+
+.store-note {
+
+    display:
+        flex;
+
+    gap:
+        16px;
+
+    align-items:
+        flex-start;
+
+    margin-top:
+        30px;
+
+    padding:
+        22px;
+
+    border:
+        1px solid rgba(255, 201, 40, 0.18);
+
+    border-radius:
+        18px;
+
+    background:
+        rgba(255, 201, 40, 0.04);
+}
+
+
+.store-note > i {
+
+    color:
+        var(--gold);
+
+    font-size:
+        23px;
+}
+
+
+.store-note strong {
+
+    display:
+        block;
+
+    margin-bottom:
+        5px;
+}
+
+
+.store-note p {
+
+    color:
+        var(--text-soft);
+
+    font-size:
+        13px;
+
+    line-height:
+        2;
+}
+
+
+/* =========================================
+            TOAST
+========================================= */
+
+.store-toast {
+
+    position:
+        fixed;
+
+    bottom:
+        25px;
+
+    right:
+        25px;
+
+    z-index:
+        999;
+
+    min-width:
+        280px;
+
+    max-width:
+        400px;
+
+    padding:
+        16px 19px;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    gap:
+        12px;
+
+    border:
+        1px solid rgba(49, 133, 255, 0.35);
+
+    border-radius:
+        14px;
+
+    background:
+        rgba(14, 27, 49, 0.95);
+
+    backdrop-filter:
+        blur(15px);
+
+    box-shadow:
+        0 20px 50px rgba(0, 0, 0, 0.35);
+
+    transform:
+        translateY(130px);
+
+    opacity:
+        0;
+
+    pointer-events:
+        none;
+
+    transition:
+        0.3s ease;
+}
+
+
+.store-toast.show {
+
+    transform:
+        translateY(0);
+
+    opacity:
+        1;
+}
+
+
+.store-toast i {
+
+    color:
+        var(--blue-light);
+
+    font-size:
+        20px;
+}
+
+
+/* =========================================
+            RESPONSIVE
+========================================= */
+
+@media (max-width: 1100px) {
+
+    .main-nav {
+        display:
+            none;
+    }
+
+    .packages-grid {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+    .subscription-grid {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+}
+
+
+@media (max-width: 700px) {
+
+    .site-header {
+        height:
+            auto;
+
+        padding:
+            15px 0;
+    }
+
+    .header-container {
+        flex-wrap:
+            wrap;
+    }
+
+    .logo {
+        font-size:
+            27px;
+    }
+
+    .header-actions {
+        width:
+            100%;
+
+        justify-content:
+            center;
+    }
+
+    .profile-button {
+        display:
+            none;
+    }
+
+    .store-page {
+        width:
+            94%;
+
+        padding-top:
+            45px;
+    }
+
+    .packages-grid,
+    .subscription-grid,
+    .store-info {
+        grid-template-columns:
+            1fr;
+    }
+
+    .current-balance {
+        flex-wrap:
+            wrap;
+    }
+
+    .balance-link {
+        width:
+            100%;
+
+        text-align:
+            center;
+    }
+
+    .comparison-row {
+        grid-template-columns:
+            1.6fr 0.7fr 0.7fr;
+    }
+
+    .comparison-row span:first-child {
+        padding-right:
+            12px;
+    }
+
+}

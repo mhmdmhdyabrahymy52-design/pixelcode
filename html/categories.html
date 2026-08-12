@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>دسته بندی فایل ها | PixelCode</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@4.6.0/fonts/remixicon.css">
+    <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/categories.css">
+    <link rel="stylesheet" href="../css/footer.css">
+</head>
+<body>
+
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <a href="index.html"><h1 class="logo-title">Pixel<span>Code</span></h1></a>
+            </div>
+            <nav class="navbar">
+                <ul>
+                    <li><a href="index.html">صفحه اصلی</a></li>
+                    <li><a href="#">فایل‌ها</a></li>
+                    <li><a href="#">پروژه‌ها</a></li>
+                    <li><a href="categories.html" class="active">دسته‌بندی‌ها</a></li>
+                    <li><a href="contact.html">ارتباط با ما</a></li>
+                </ul>
+            </nav>
+            <div class="header-buttons">
+                <a href="login.html" class="login-btn" id="loginBtn">ورود</a>
+                <a href="register.html" class="signup-btn" id="registerBtn">ثبت نام</a>
+                <a href="profile.html" class="profile" id="profileBox">
+                    <img src="../images/avatar-default.svg" class="profile-image" id="profileAvatar">
+                    <div class="profile-info">
+                        <span class="profile-title" id="profileTitle">پروفایل</span>
+                        <span class="profile-status" id="profileStatus">ثبت نام نکرده‌ای</span>
+                    </div>
+                </a>
+                <a href="favorites.html" class="favorites-btn" id="favoritesBtn" title="علاقه‌مندی‌ها">
+                    <i class="ri-heart-line"></i>
+                    <span class="favorites-count" id="favoritesCount">0</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <span class="hero-badge">📁 دسته‌بندی فایل‌ها</span>
+                <h1 class="hero-title">کتابخانه <span style="color:#3B82F6;">فایل‌های</span> PixelCode</h1>
+                <p class="hero-text">تمام فایل‌های طراحی، کد و گرافیک مورد نیاز خود را در یکجا پیدا کنید</p>
+                <div class="hero-stats">
+                    <div class="hero-stat"><span class="stat-number" id="totalFiles">۰</span><span class="stat-label">فایل</span></div>
+                    <div class="hero-stat"><span class="stat-number" id="totalDownloads">۰</span><span class="stat-label">دانلود</span></div>
+                    <div class="hero-stat"><span class="stat-number" id="freeCount">۰</span><span class="stat-label">رایگان</span></div>
+                    <div class="hero-stat"><span class="stat-number" id="premiumCount">۰</span><span class="stat-label">پولی</span></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="categories-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>📂 دسته‌بندی فایل‌ها</h2>
+                <p>برای مشاهده فایل‌های هر دسته، روی آن کلیک کنید</p>
+            </div>
+            <div class="categories-grid" id="categoriesGrid"></div>
+            <div class="category-files-section" id="categoryFilesSection" style="display:none;">
+                <div class="category-files-header">
+                    <button class="back-btn" id="backToCategories"><i class="ri-arrow-right-s-line"></i> بازگشت به دسته‌بندی‌ها</button>
+                    <h3 id="categoryFilesTitle">فایل‌های دسته</h3>
+                    <span class="file-count-badge" id="categoryFilesCount">۰ فایل</span>
+                </div>
+                <div class="category-files-grid" id="categoryFilesGrid"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- مودال پرداخت -->
+    <div class="modal-overlay" id="paymentModal">
+        <div class="payment-modal">
+            <div class="payment-header">
+                <h2>💳 پرداخت</h2>
+                <button class="payment-close" id="closePaymentModal"><i class="ri-close-line"></i></button>
+            </div>
+            <div class="payment-body">
+                <div class="payment-info">
+                    <div class="payment-file-icon" id="paymentFileIcon">📄</div>
+                    <h3 id="paymentFileName">نام فایل</h3>
+                    <p class="payment-price" id="paymentFilePrice">۰ تومان</p>
+                </div>
+                <div class="payment-divider"></div>
+                <div class="bank-info-box">
+                    <h4>💳 اطلاعات واریز</h4>
+                    <div class="bank-details">
+                        <p><strong>🏦 بانک:</strong> <span id="bankName">بانک ملی</span></p>
+                        <p><strong>💳 شماره کارت:</strong> <span class="card-number" id="cardNumber">6037-9918-1234-5678</span></p>
+                        <p><strong>👤 به نام:</strong> <span id="accountName">محمد مهدی ابراهیمی کهکی</span></p>
+                        <p><strong>🔢 شبا:</strong> <span id="shaba">IR570170000000123456789001</span></p>
+                        <p class="amount-text">💰 مبلغ: <span id="paymentAmount">۰</span> تومان</p>
+                    </div>
+                    <div class="bank-note">
+                        <p>⏳ پس از واریز، کد پیگیری رو وارد کنید</p>
+                        <p class="warning">⚠️ کد پیگیری باید با مبلغ واریز شده مطابقت داشته باشد</p>
+                    </div>
+                </div>
+                <div class="payment-divider"></div>
+                <div class="payment-summary">
+                    <div class="payment-row"><span>مبلغ قابل پرداخت</span><span class="payment-total" id="paymentTotal">۰ تومان</span></div>
+                </div>
+            </div>
+            <div class="payment-footer">
+                <button class="payment-cancel" id="cancelPaymentBtn">انصراف</button>
+                <button class="payment-confirm" id="confirmPaymentBtn"><i class="ri-check-line"></i> ثبت کد پیگیری</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="toast-container" id="toastContainer"></div>
+
+    <script src="../js/script.js"></script>
+    <script src="../js/footer.js"></script>
+    <script src="../js/db.js"></script>
+    <script src="../js/categories.js"></script>
+</body>
+</html>

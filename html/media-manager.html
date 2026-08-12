@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>مدیریت رسانه‌ها | PixelCode</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@4.6.0/fonts/remixicon.css">
+    <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/media-manager.css">
+    <link rel="stylesheet" href="../css/footer.css">
+</head>
+<body>
+
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <a href="index.html">
+                    <h1 class="logo-title">Pixel<span>Code</span></h1>
+                </a>
+            </div>
+            <nav class="navbar">
+                <ul>
+                    <li><a href="index.html">صفحه اصلی</a></li>
+                    <li><a href="#">فایل‌ها</a></li>
+                    <li><a href="#">پروژه‌ها</a></li>
+                    <li><a href="categories.html">دسته‌بندی‌ها</a></li>
+                    <li><a href="contact.html">ارتباط با ما</a></li>
+                </ul>
+            </nav>
+            <div class="header-buttons">
+                <a href="login.html" class="login-btn" id="loginBtn">ورود</a>
+                <a href="register.html" class="signup-btn" id="registerBtn">ثبت نام</a>
+                <a href="profile.html" class="profile" id="profileBox">
+                    <img src="../images/avatar-default.svg" class="profile-image" id="profileAvatar">
+                    <div class="profile-info">
+                        <span class="profile-title" id="profileTitle">پروفایل</span>
+                        <span class="profile-status" id="profileStatus">ثبت نام نکرده‌ای</span>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <main class="media-manager">
+        <div class="container">
+            <div class="manager-top">
+                <div>
+                    <h1>📁 مدیریت فایل‌ها</h1>
+                    <p>افزودن، ویرایش و حذف فایل‌های سایت</p>
+                </div>
+                <button type="button" id="addMediaBtn" class="primary-btn">
+                    <i class="ri-add-line"></i> افزودن فایل
+                </button>
+            </div>
+
+            <div class="manager-stats">
+                <div class="stat-card"><span id="totalFiles">0</span><small>کل فایل‌ها</small></div>
+                <div class="stat-card"><span id="freeFiles">0</span><small>فایل رایگان</small></div>
+                <div class="stat-card"><span id="premiumFiles">0</span><small>فایل پولی</small></div>
+                <div class="stat-card"><span id="totalDownloads">0</span><small>دانلودها</small></div>
+            </div>
+
+            <div class="manager-toolbar">
+                <div class="search-box">
+                    <i class="ri-search-line"></i>
+                    <input type="text" id="searchInput" placeholder="جستجوی فایل ...">
+                </div>
+                <div class="toolbar-filters">
+                    <select id="categoryFilter">
+                        <option value="all">همه دسته بندی‌ها</option>
+                        <option value="background">بک گراند</option>
+                        <option value="css">CSS</option>
+                        <option value="html">HTML</option>
+                        <option value="javascript">JavaScript</option>
+                        <option value="logo">لوگو</option>
+                        <option value="icon">آیکون</option>
+                        <option value="font">فونت</option>
+                        <option value="project">پروژه</option>
+                        <option value="ui">UI Kit</option>
+                        <option value="effect">افکت</option>
+                        <option value="responsive">قالب ریسپانسیو</option>
+                        <option value="other">سایر</option>
+                    </select>
+                    <select id="priceFilter">
+                        <option value="all">همه قیمت‌ها</option>
+                        <option value="free">رایگان</option>
+                        <option value="premium">پولی</option>
+                    </select>
+                    <select id="statusFilter">
+                        <option value="all">همه وضعیت‌ها</option>
+                        <option value="فعال">فعال</option>
+                        <option value="غیرفعال">غیرفعال</option>
+                    </select>
+                </div>
+                <div class="toolbar-actions">
+                    <button class="toolbar-btn" id="refreshMedia" title="بروزرسانی"><i class="ri-refresh-line"></i></button>
+                    <button class="toolbar-btn danger" id="deleteSelected"><i class="ri-delete-bin-6-line"></i> حذف انتخاب‌شده</button>
+                </div>
+            </div>
+
+            <div class="table-wrapper">
+                <table class="media-table">
+                    <thead>
+                        <tr>
+                            <th><input type="checkbox" id="selectAll"></th>
+                            <th>تصویر</th>
+                            <th>نام فایل</th>
+                            <th>دسته بندی</th>
+                            <th>قیمت</th>
+                            <th>دانلود</th>
+                            <th>وضعیت</th>
+                            <th>عملیات</th>
+                        </tr>
+                    </thead>
+                    <tbody id="mediaTableBody"></tbody>
+                </table>
+            </div>
+        </div>
+    </main>
+
+    <!-- مودال افزودن فایل -->
+    <div class="modal-overlay" id="mediaModal">
+        <div class="modal-box">
+            <div class="modal-header">
+                <h2 id="modalTitle">افزودن فایل جدید</h2>
+                <button type="button" id="closeModal" class="modal-close-btn"><i class="ri-close-line"></i></button>
+            </div>
+            <div class="modal-body-scroll">
+                <form id="mediaForm">
+                    <input type="hidden" id="mediaId">
+                    <input type="hidden" id="priceType" value="free">
+
+                    <div class="form-group">
+                        <label>نام فایل</label>
+                        <input type="text" id="fileName" placeholder="نام فایل را وارد کنید">
+                    </div>
+
+                    <div class="form-group">
+                        <label>دسته بندی</label>
+                        <select id="fileCategory">
+                            <option value="background">بک گراند</option>
+                            <option value="css">CSS</option>
+                            <option value="html">HTML</option>
+                            <option value="javascript">JavaScript</option>
+                            <option value="logo">لوگو</option>
+                            <option value="icon">آیکون</option>
+                            <option value="font">فونت</option>
+                            <option value="project">پروژه</option>
+                            <option value="ui">UI Kit</option>
+                            <option value="effect">افکت</option>
+                            <option value="responsive">قالب ریسپانسیو</option>
+                            <option value="other">سایر</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label>نوع فایل</label>
+                        <div class="price-toggle">
+                            <button type="button" class="toggle-btn active" data-value="free" onclick="window.setPriceType('free')"><i class="ri-gift-line"></i> رایگان</button>
+                            <button type="button" class="toggle-btn" data-value="premium" onclick="window.setPriceType('premium')"><i class="ri-vip-crown-line"></i> پولی</button>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>قیمت (تومان)</label>
+                        <input type="number" id="filePrice" placeholder="۰" min="0" value="0">
+                    </div>
+
+                    <div class="form-group">
+                        <label>وضعیت</label>
+                        <select id="fileStatus">
+                            <option value="فعال">فعال</option>
+                            <option value="غیرفعال">غیرفعال</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label>انتخاب فایل</label>
+                        <input type="file" id="fileImage" accept="*/*">
+                        <small style="color:#64748B;font-size:0.75rem;display:block;margin-top:0.3rem;">هر نوع فایلی قابل آپلود است</small>
+                    </div>
+
+                    <div class="form-actions">
+                        <button type="submit" class="btn-save">ذخیره فایل</button>
+                        <button type="button" id="cancelBtn" class="btn-cancel">انصراف</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- مودال حذف -->
+    <div class="modal-overlay" id="deleteModal">
+        <div class="confirm-box">
+            <div class="confirm-icon"><i class="ri-delete-bin-6-line"></i></div>
+            <h3>حذف فایل</h3>
+            <p>آیا از حذف این فایل مطمئن هستید؟</p>
+            <div class="confirm-actions">
+                <button type="button" id="deleteCancel" class="btn-no">انصراف</button>
+                <button type="button" id="deleteAccept" class="btn-yes">حذف</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="toast-container" id="toastContainer"></div>
+
+    <script src="../js/script.js"></script>
+    <script src="../js/footer.js"></script>
+    <script src="../js/db.js"></script>
+    <script src="../js/media-manager.js"></script>
+</body>
+</html>

@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>پروفایل | PixelCode</title>
+    <link rel="stylesheet" href="../css/profile.css">
+</head>
+
+<body>
+
+    <main class="profile-page">
+        <div class="profile-container">
+
+            <!-- ==========================================
+            SIDEBAR
+            ========================================== -->
+
+            <aside class="profile-sidebar">
+
+                <!-- AVATAR -->
+                <div class="profile-avatar-box">
+                    <img id="profileAvatar" class="profile-avatar" src="../images/avatar-default.svg" alt="تصویر پروفایل">
+                    <button type="button" id="changeAvatarBtn" class="avatar-btn">تغییر تصویر</button>
+                    <input type="file" id="avatarInput" accept="image/png,image/jpeg,image/webp,image/gif" hidden>
+                </div>
+
+                <!-- NAME -->
+                <h1 id="profileName" class="profile-name">...</h1>
+
+                <!-- USERNAME -->
+                <p id="profileUsername" class="profile-username">@username</p>
+
+                <!-- STATUS -->
+                <span id="profileStatus" class="profile-status">فعال</span>
+
+                <!-- ROLE -->
+                <div id="profileRoleBox" class="profile-role">
+                    <span id="profileRole">کاربر</span>
+                </div>
+
+                <!-- ACCOUNT TYPE -->
+                <div id="profileAccountTypeBox" class="profile-account-type">
+                    <span class="type-title">نوع حساب</span>
+                    <strong id="profileAccountType">انتخاب نشده</strong>
+                </div>
+
+                <!-- TOKENS -->
+                <div class="profile-tokens">
+                    <span>توکن</span>
+                    <strong id="profileTokens">0</strong>
+                </div>
+
+                <!-- MENU -->
+                <nav class="profile-menu">
+                    <a href="profile.html" class="menu-item active">
+                        <span>اطلاعات حساب</span>
+                    </a>
+                    <a href="downloads.html" class="menu-item">
+                        <span>دانلودهای من</span>
+                    </a>
+                    <a href="favorites.html" class="menu-item">
+                        <span>علاقه‌مندی‌ها</span>
+                    </a>
+                    <a href="dashboard.html" id="adminMenu" class="menu-item admin-menu" style="display:none;">
+                        <span>پنل مدیریت</span>
+                        <span class="admin-badge">مدیریت</span>
+                    </a>
+                    <button type="button" id="logoutBtn" class="menu-item logout-btn">
+                        <span>خروج از حساب</span>
+                        <span>🚪</span>
+                    </button>
+                </nav>
+
+            </aside>
+
+            <!-- ==========================================
+            CONTENT
+            ========================================== -->
+
+            <section class="profile-content">
+
+                <!-- HEADER -->
+                <div class="page-heading">
+                    <span class="heading-badge">PixelCode</span>
+                    <h2>اطلاعات حساب</h2>
+                    <p>اطلاعات حساب کاربری خود را مشاهده و مدیریت کنید.</p>
+                </div>
+
+                <!-- ======================================
+                ACCOUNT CARD
+                ====================================== -->
+
+                <div class="profile-card">
+
+                    <div class="card-header">
+                        <div>
+                            <span>حساب کاربری</span>
+                            <h3>اطلاعات شخصی</h3>
+                        </div>
+                        <div class="card-icon">◈</div>
+                    </div>
+
+                    <div class="profile-list">
+
+                        <!-- FULLNAME -->
+                        <div class="profile-item">
+                            <span class="field-title">نام و نام خانوادگی</span>
+                            <div class="item-value">
+                                <strong id="fullnameValue">-</strong>
+                                <button type="button" class="edit-btn" data-field="fullname" title="ویرایش نام">✎</button>
+                            </div>
+                        </div>
+
+                        <!-- USERNAME -->
+                        <div class="profile-item">
+                            <span class="field-title">نام کاربری</span>
+                            <div class="item-value">
+                                <strong id="usernameValue" dir="ltr">-</strong>
+                                <button type="button" class="edit-btn" data-field="username" title="ویرایش نام کاربری">✎</button>
+                            </div>
+                        </div>
+
+                        <!-- EMAIL -->
+                        <div class="profile-item">
+                            <span class="field-title">ایمیل</span>
+                            <div class="item-value">
+                                <strong id="emailValue" dir="ltr">-</strong>
+                                <button type="button" class="edit-btn" data-field="email" title="ویرایش ایمیل">✎</button>
+                            </div>
+                        </div>
+
+                        <!-- PHONE -->
+                        <div class="profile-item">
+                            <span class="field-title">شماره موبایل</span>
+                            <div class="item-value">
+                                <strong id="phoneValue" dir="ltr">-</strong>
+                                <button type="button" class="edit-btn" data-field="phone" title="ویرایش شماره موبایل">✎</button>
+                            </div>
+                        </div>
+
+                        <!-- PUBLIC ID -->
+                        <div class="profile-item">
+                            <span class="field-title">شناسه کاربری</span>
+                            <div class="item-value">
+                                <strong id="publicId" dir="ltr">PC-000000</strong>
+                            </div>
+                        </div>
+
+                        <!-- JOIN DATE -->
+                        <div class="profile-item">
+                            <span class="field-title">تاریخ عضویت</span>
+                            <div class="item-value">
+                                <strong id="joinDate">-</strong>
+                            </div>
+                        </div>
+
+                        <!-- ROLE -->
+                        <div class="profile-item">
+                            <span class="field-title">نقش سیستم</span>
+                            <div class="item-value">
+                                <strong id="roleValue" class="role-value">کاربر</strong>
+                            </div>
+                        </div>
+
+                        <!-- ACCOUNT TYPE -->
+                        <div class="profile-item">
+                            <span class="field-title">نوع حساب</span>
+                            <div class="item-value">
+                                <strong id="accountTypeValue">انتخاب نشده</strong>
+                            </div>
+                        </div>
+
+                        <!-- STATUS -->
+                        <div class="profile-item">
+                            <span class="field-title">وضعیت حساب</span>
+                            <div class="item-value">
+                                <strong id="accountStatus" class="status-value">فعال</strong>
+                            </div>
+                        </div>
+
+                        <!-- TOKENS -->
+                        <div class="profile-item">
+                            <span class="field-title">موجودی توکن</span>
+                            <div class="item-value">
+                                <strong id="profileTokensBottom" class="token-value">0</strong>
+                                <span class="token-label">توکن</span>
+                            </div>
+                        </div>
+
+                        <!-- PASSWORD -->
+                        <div class="profile-item">
+                            <span class="field-title">رمز عبور</span>
+                            <div class="item-value">
+                                <a href="change-password.html" class="change-password-link">تغییر رمز عبور</a>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <!-- ======================================
+                ADMIN INFORMATION
+                ====================================== -->
+
+                <div id="adminInfoCard" class="admin-info-card" style="display:none;">
+                    <div class="admin-info-icon">👑</div>
+                    <div>
+                        <span>دسترسی مدیریتی</span>
+                        <h3 id="adminInfoTitle">-</h3>
+                        <p id="adminInfoText">-</p>
+                    </div>
+                </div>
+
+            </section>
+
+        </div>
+    </main>
+
+    <!-- ==========================================
+    EDIT MODAL
+    ========================================== -->
+
+    <div class="modal hidden" id="editModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <div>
+                    <span>PixelCode</span>
+                    <h3 id="modalTitle">ویرایش</h3>
+                </div>
+                <button type="button" id="closeModal" class="modal-close">×</button>
+            </div>
+            <div class="modal-body">
+                <label for="modalInput" class="modal-label">مقدار جدید</label>
+                <input type="text" id="modalInput" class="modal-input" placeholder="مقدار جدید را وارد کنید" autocomplete="off">
+            </div>
+            <div class="modal-footer">
+                <button type="button" id="cancelModal" class="cancel-btn">انصراف</button>
+                <button type="button" id="saveModal" class="save-btn">ذخیره تغییرات</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- ==========================================
+    LOGOUT MODAL
+    ========================================== -->
+
+    <div class="modal hidden" id="logoutModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <div>
+                    <span>PixelCode</span>
+                    <h3>خروج از حساب</h3>
+                </div>
+                <button type="button" id="closeLogoutModal" class="modal-close">×</button>
+            </div>
+            <div class="modal-body logout-body">
+                <div class="logout-icon-big">🚪</div>
+                <p>آیا مطمئن هستید که می‌خواهید از حساب خود خارج شوید؟</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" id="cancelLogout" class="cancel-btn">انصراف</button>
+                <button type="button" id="confirmLogout" class="danger-btn">خروج از حساب</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- ==========================================
+    TOAST
+    ========================================== -->
+
+    <div id="toastContainer"></div>
+
+    <script src="../js/profile.js"></script>
+
+</body>
+
+</html>

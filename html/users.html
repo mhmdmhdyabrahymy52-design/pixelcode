@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>مدیریت کاربران | PixelCode</title>
+
+    <link rel="stylesheet" href="../css/users.css">
+
+    <link rel="stylesheet" href="../css/toast.css">
+    <link rel="stylesheet" href="../css/modal.css">
+    <link rel="stylesheet" href="../css/animations.css">
+
+</head>
+
+<body>
+    <main class="users-page">
+
+        <div class="container">
+
+            <div class="page-header">
+
+                <h1>
+
+                    مدیریت کاربران
+
+                </h1>
+
+                <p>
+
+                    مشاهده، ویرایش و مدیریت کاربران سایت
+
+                </p>
+
+            </div>
+
+            <div class="stats-grid">
+
+                <div class="stat-card">
+
+                    <h3 id="totalUsers">
+
+                        0
+
+                    </h3>
+
+                    <span>
+
+                        کل کاربران
+
+                    </span>
+
+                </div>
+
+                <div class="stat-card">
+
+                    <h3 id="adminUsers">
+
+                        0
+
+                    </h3>
+
+                    <span>
+
+                        مدیران
+
+                    </span>
+
+                </div>
+
+                <div class="stat-card">
+
+                    <h3 id="blockedUsers">
+
+                        0
+
+                    </h3>
+
+                    <span>
+
+                        کاربران مسدود
+
+                    </span>
+
+                </div>
+
+            </div>
+
+            <div class="users-toolbar">
+
+                <input type="text" id="searchUser" placeholder="جستجو با شناسه، نام، نام کاربری یا ایمیل">
+
+            </div>
+
+            <div class="users-table-box">
+
+                <table class="users-table">
+
+                    <thead>
+
+                        <tr>
+
+                            <th onclick="sortUsers('publicId')">
+
+                                شناسه
+
+                            </th>
+
+                            <th onclick="sortUsers('fullname')">
+
+                                نام
+
+                            </th>
+
+                            <th onclick="sortUsers('username')">
+
+                                نام کاربری
+
+                            </th>
+
+                            <th onclick="sortUsers('email')">
+
+                                ایمیل
+
+                            </th>
+
+                            <th onclick="sortUsers('role')">
+
+                                نقش
+
+                            </th>
+
+                            <th onclick="sortUsers('status')">
+
+                                وضعیت
+
+                            </th>
+
+                            <th onclick="sortUsers('date')">
+
+                                تاریخ عضویت
+
+                            </th>
+
+                            <th>
+
+                                عملیات
+
+                            </th>
+
+                        </tr>
+
+                    </thead>
+
+                    <tbody id="usersTableBody">
+
+                        <tr>
+
+                            <td colspan="8">
+
+                                هیچ کاربری ثبت نشده است.
+
+                            </td>
+
+                        </tr>
+
+                    </tbody>
+
+                </table>
+
+            </div>
+            <div class="pagination" id="pagination">
+
+                <!-- JavaScript -->
+
+            </div>
+
+            <div class="pagination-info" id="paginationInfo">
+
+            </div>
+        </div>
+
+    </main>
+
+    <div id="toast"></div>
+
+    <script src="../js/script.js"></script>
+
+    <script src="../js/utils.js"></script>
+    <script src="../js/modal.js"></script>
+    <script src="../js/toast.js"></script>
+
+    <script src="../js/users.js"></script>
+
+</body>
+
+</html>

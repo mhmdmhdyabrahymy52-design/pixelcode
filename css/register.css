@@ -1,0 +1,581 @@
+/*======================================
+            GOOGLE FONT
+======================================*/
+
+*{
+
+    margin:0;
+
+    padding:0;
+
+    box-sizing:border-box;
+
+    font-family:"Vazirmatn",sans-serif;
+
+}
+
+html{
+
+    scroll-behavior:smooth;
+
+}
+
+body{
+
+    background:#0b1220;
+
+    color:#ffffff;
+
+    min-height:100vh;
+
+    overflow-x:hidden;
+
+}
+
+/*======================================
+            REGISTER PAGE
+======================================*/
+
+.register-page{
+
+    width:100%;
+
+    min-height:100vh;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    padding:40px 20px;
+
+    background:
+
+        radial-gradient(circle at top,#1d4ed8 0%,transparent 40%),
+
+        radial-gradient(circle at bottom,#312e81 0%,transparent 35%),
+
+        #0b1220;
+
+}
+
+/*======================================
+            CARD
+======================================*/
+
+.register-card{
+
+    width:100%;
+
+    max-width:560px;
+
+    background:#111827;
+
+    border:1px solid rgba(255,255,255,.08);
+
+    border-radius:22px;
+
+    padding:45px;
+
+    box-shadow:
+
+        0 25px 80px rgba(0,0,0,.45);
+
+    animation:fadeUp .6s ease;
+
+}
+
+/*======================================
+            LOGO
+======================================*/
+
+.logo{
+
+    display:block;
+
+    text-align:center;
+
+    text-decoration:none;
+
+    font-size:34px;
+
+    font-weight:800;
+
+    color:#ffffff;
+
+    margin-bottom:25px;
+
+}
+
+.logo span{
+
+    color:#3b82f6;
+
+}
+
+/*======================================
+            TITLES
+======================================*/
+
+.register-card h1{
+
+    text-align:center;
+
+    font-size:30px;
+
+    margin-bottom:12px;
+
+    font-weight:800;
+
+}
+
+.subtitle{
+
+    text-align:center;
+
+    color:#94a3b8;
+
+    margin-bottom:35px;
+
+    line-height:1.8;
+
+}
+
+/*======================================
+            FORM
+======================================*/
+
+.register-form{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:22px;
+
+}
+
+/*======================================
+            INPUT GROUP
+======================================*/
+
+.input-group{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:10px;
+
+}
+
+.input-group label{
+
+    font-size:15px;
+
+    font-weight:600;
+
+}
+
+.input-group small{
+
+    color:#64748b;
+
+    font-size:12px;
+
+}
+
+/*======================================
+            INPUT
+======================================*/
+
+.input-group input{
+
+    width:100%;
+
+    height:54px;
+
+    background:#1e293b;
+
+    border:1px solid rgba(255,255,255,.08);
+
+    border-radius:14px;
+
+    color:#fff;
+
+    padding:0 18px;
+
+    font-size:15px;
+
+    transition:.25s;
+
+    outline:none;
+
+}
+
+.input-group input::placeholder{
+
+    color:#64748b;
+
+}
+
+.input-group input:focus{
+
+    border-color:#3b82f6;
+
+    box-shadow:
+
+        0 0 0 4px rgba(59,130,246,.18);
+
+}
+
+/*======================================
+        ERROR INPUT
+======================================*/
+
+.input-error{
+
+    border-color:#ef4444 !important;
+
+    box-shadow:
+
+        0 0 0 4px rgba(239,68,68,.15);
+
+}
+
+/*======================================
+            PASSWORD BOX
+======================================*/
+
+.password-box{
+
+    position:relative;
+
+    display:flex;
+
+    align-items:center;
+
+}
+
+.password-box input{
+
+    padding-left:55px;
+
+}
+
+.show-password{
+
+    position:absolute;
+
+    left:10px;
+
+    top:50%;
+
+    transform:translateY(-50%);
+
+    width:40px;
+
+    height:40px;
+
+    border:none;
+
+    border-radius:10px;
+
+    background:transparent;
+
+    color:#94a3b8;
+
+    cursor:pointer;
+
+    transition:.25s;
+
+    font-size:18px;
+
+}
+
+.show-password:hover{
+
+    background:#273449;
+
+    color:#ffffff;
+
+}
+
+/*======================================
+            TERMS
+======================================*/
+
+.terms{
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:flex-start;
+
+}
+
+.terms label{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:10px;
+
+    cursor:pointer;
+
+    color:#cbd5e1;
+
+    font-size:14px;
+
+}
+
+.terms input{
+
+    width:18px;
+
+    height:18px;
+
+    accent-color:#3b82f6;
+
+}
+
+/*======================================
+            REGISTER BUTTON
+======================================*/
+
+.register-btn{
+
+    width:100%;
+
+    height:56px;
+
+    border:none;
+
+    border-radius:14px;
+
+    background:#2563eb;
+
+    color:#fff;
+
+    font-size:16px;
+
+    font-weight:700;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+.register-btn:hover{
+
+    background:#1d4ed8;
+
+    transform:translateY(-2px);
+
+    box-shadow:0 12px 30px rgba(37,99,235,.35);
+
+}
+
+.register-btn:active{
+
+    transform:scale(.98);
+
+}
+
+/*======================================
+            LOGIN TEXT
+======================================*/
+
+.login-text{
+
+    margin-top:28px;
+
+    text-align:center;
+
+    color:#94a3b8;
+
+    font-size:14px;
+
+}
+
+.login-text a{
+
+    color:#3b82f6;
+
+    text-decoration:none;
+
+    font-weight:700;
+
+}
+
+.login-text a:hover{
+
+    text-decoration:underline;
+
+}
+
+/*======================================
+            ANIMATION
+======================================*/
+
+.register-card{
+
+    animation:fadeUp .6s ease;
+
+}
+
+@keyframes fadeUp{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(30px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+/*======================================
+            SCROLLBAR
+======================================*/
+
+::-webkit-scrollbar{
+
+    width:10px;
+
+}
+
+::-webkit-scrollbar-track{
+
+    background:#0b1220;
+
+}
+
+::-webkit-scrollbar-thumb{
+
+    background:#334155;
+
+    border-radius:20px;
+
+}
+
+::-webkit-scrollbar-thumb:hover{
+
+    background:#475569;
+
+}
+
+/*======================================
+            RESPONSIVE
+======================================*/
+
+@media(max-width:768px){
+
+    .register-page{
+
+        padding:25px 15px;
+
+    }
+
+    .register-card{
+
+        padding:30px 22px;
+
+        border-radius:18px;
+
+    }
+
+    .logo{
+
+        font-size:28px;
+
+    }
+
+    .register-card h1{
+
+        font-size:24px;
+
+    }
+
+    .subtitle{
+
+        font-size:14px;
+
+        margin-bottom:25px;
+
+    }
+
+    .input-group input{
+
+        height:50px;
+
+        font-size:14px;
+
+    }
+
+    .register-btn{
+
+        height:52px;
+
+        font-size:15px;
+
+    }
+
+}
+
+@media(max-width:480px){
+
+    .register-card{
+
+        padding:24px 18px;
+
+    }
+
+    .logo{
+
+        font-size:24px;
+
+    }
+
+    .register-card h1{
+
+        font-size:21px;
+
+    }
+
+    .input-group label{
+
+        font-size:14px;
+
+    }
+
+    .input-group input{
+
+        height:48px;
+
+    }
+
+    .show-password{
+
+        width:36px;
+
+        height:36px;
+
+        font-size:16px;
+
+    }
+
+}

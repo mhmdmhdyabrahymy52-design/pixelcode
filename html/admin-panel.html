@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>پنل مدیریت | PixelCode</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@4.6.0/fonts/remixicon.css">
+    <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/admin-panel.css">
+    <link rel="stylesheet" href="../css/footer.css">
+</head>
+<body>
+
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <a href="index.html">
+                    <h1 class="logo-title">Pixel<span>Code</span></h1>
+                </a>
+            </div>
+            <nav class="navbar">
+                <ul>
+                    <li><a href="index.html">صفحه اصلی</a></li>
+                    <li><a href="categories.html">دسته‌بندی‌ها</a></li>
+                    <li><a href="media-manager.html">مدیریت فایل‌ها</a></li>
+                    <li><a href="admin-panel.html" class="active">پنل مدیریت</a></li>
+                </ul>
+            </nav>
+            <div class="header-buttons">
+                <a href="profile.html" class="profile" id="profileBox">
+                    <img src="../images/avatar-default.svg" class="profile-image" id="profileAvatar">
+                    <div class="profile-info">
+                        <span class="profile-title" id="profileTitle">ادمین</span>
+                        <span class="profile-status" id="profileStatus">مدیر</span>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <main class="admin-panel">
+        <div class="container">
+            <div class="admin-header">
+                <h1>📋 پنل مدیریت</h1>
+                <p>مدیریت پرداخت‌ها و تایید کدهای پیگیری</p>
+            </div>
+
+            <!-- آمار -->
+            <div class="admin-stats">
+                <div class="stat-card">
+                    <span id="pendingCount">0</span>
+                    <small>در انتظار تایید</small>
+                </div>
+                <div class="stat-card">
+                    <span id="verifiedCount">0</span>
+                    <small>تایید شده</small>
+                </div>
+                <div class="stat-card">
+                    <span id="rejectedCount">0</span>
+                    <small>رد شده</small>
+                </div>
+                <div class="stat-card">
+                    <span id="totalPayments">0</span>
+                    <small>کل پرداخت‌ها</small>
+                </div>
+            </div>
+
+            <!-- لیست پرداخت‌ها -->
+            <div class="payments-table-wrapper">
+                <table class="payments-table">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>نام فایل</th>
+                            <th>مبلغ</th>
+                            <th>کد پیگیری</th>
+                            <th>کاربر</th>
+                            <th>تاریخ</th>
+                            <th>وضعیت</th>
+                            <th>عملیات</th>
+                        </tr>
+                    </thead>
+                    <tbody id="paymentsTableBody">
+                        <!-- توسط جاوااسکریپت -->
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- خالی بودن -->
+            <div class="empty-state" id="emptyState" style="display:none;">
+                <i class="ri-inbox-line"></i>
+                <h3>هیچ پرداختی وجود ندارد</h3>
+                <p>هیچ کاربری کد پیگیری ثبت نکرده است</p>
+            </div>
+        </div>
+    </main>
+    
+    <div class="toast-container" id="toastContainer"></div>
+
+    <script src="../js/script.js"></script>
+    <script src="../js/footer.js"></script>
+    <script src="../js/admin-panel.js"></script>
+</body>
+</html>

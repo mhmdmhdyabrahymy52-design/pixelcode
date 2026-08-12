@@ -1,0 +1,1263 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>PixelCode | پروژه‌ها</title>
+
+    <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/remixicon@4.6.0/fonts/remixicon.css"
+    >
+
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com"
+    >
+
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Estedad:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet"
+    >
+
+    <link
+        rel="stylesheet"
+        href="../css/projects.css"
+    >
+
+</head>
+
+<body>
+
+<!-- =====================================================
+                         HEADER
+===================================================== -->
+
+<header class="header">
+
+    <div class="header-container">
+
+        <a href="index.html" class="logo">
+            Pixel<span>Code</span>
+        </a>
+
+        <nav class="navbar">
+
+            <a href="index.html">صفحه اصلی</a>
+
+            <a href="#">فایل‌ها</a>
+
+            <a href="projects.html" class="active">
+                پروژه‌ها
+            </a>
+
+            <a href="categories.html">
+                دسته‌بندی‌ها
+            </a>
+
+            <a href="contact.html">
+                ارتباط با ما
+            </a>
+
+        </nav>
+
+        <div class="header-user">
+
+            <!-- TOKEN -->
+
+            <a
+                href="token-shop.html"
+                class="token-box"
+                title="خرید توکن"
+            >
+
+                <i class="ri-coin-line"></i>
+
+                <strong id="tokenCount">
+                    100
+                </strong>
+
+                <span>
+                    توکن
+                </span>
+
+            </a>
+
+
+            <!-- SUBSCRIPTION -->
+
+            <a
+                href="subscription.html"
+                class="subscription-box"
+                title="اشتراک"
+            >
+
+                <i class="ri-vip-crown-line"></i>
+
+                <span>
+                    اشتراک
+                </span>
+
+            </a>
+
+
+            <!-- NOTIFICATION -->
+
+            <div class="notification-wrapper">
+
+                <button
+                    type="button"
+                    class="notification-btn"
+                    id="notificationBtn"
+                >
+
+                    <i class="ri-notification-3-line"></i>
+
+                    <span
+                        id="notificationCount"
+                        class="notification-count"
+                    >
+                        0
+                    </span>
+
+                </button>
+
+                <div
+                    class="notifications-panel"
+                    id="notificationsPanel"
+                >
+
+                    <div class="notifications-header">
+
+                        <h3>
+                            اعلان‌ها
+                        </h3>
+
+                        <button
+                            type="button"
+                            id="clearNotificationsBtn"
+                        >
+                            پاک کردن
+                        </button>
+
+                    </div>
+
+                    <div
+                        id="notificationsList"
+                        class="notifications-list"
+                    ></div>
+
+                </div>
+
+            </div>
+
+
+            <!-- PROFILE -->
+
+            <a
+                href="profile.html"
+                class="header-profile"
+            >
+
+                <img
+                    src="../images/avatar-default.svg"
+                    id="profileAvatar"
+                    alt="پروفایل"
+                >
+
+                <div>
+
+                    <strong id="profileTitle">
+                        پروفایل
+                    </strong>
+
+                    <span id="profileStatus">
+                        ثبت نام نکرده‌ای
+                    </span>
+
+                </div>
+
+            </a>
+
+        </div>
+
+    </div>
+
+</header>
+
+
+<!-- =====================================================
+                         MAIN
+===================================================== -->
+
+<main class="page">
+
+    <div class="container">
+
+
+        <!-- HERO -->
+
+        <section class="hero">
+
+            <div class="hero-content">
+
+                <span class="badge">
+
+                    <i class="ri-briefcase-line"></i>
+
+                    بازار پروژه‌ها
+
+                </span>
+
+                <h1>
+                    پروژه‌های قابل انجام
+                </h1>
+
+                <p>
+                    پروژه مناسب خودت را پیدا کن و برای آن پیشنهاد بفرست.
+                </p>
+
+            </div>
+
+            <div class="token-card">
+
+                <span>
+                    موجودی شما
+                </span>
+
+                <strong id="heroTokenCount">
+                    100
+                </strong>
+
+                <small>
+                    توکن
+                </small>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+                       EMPLOYER PANEL
+        ================================================= -->
+
+        <section
+            class="employer-panel hidden"
+            id="employerPanel"
+        >
+
+            <div class="section-heading">
+
+                <div>
+
+                    <span class="section-label">
+
+                        <i class="ri-user-star-line"></i>
+
+                        پنل کارفرما
+
+                    </span>
+
+                    <h2>
+                        مدیریت پروژه‌های من
+                    </h2>
+
+                    <p>
+                        پروژه ثبت کن و پیشنهادهای فریلنسرها را مدیریت کن.
+                    </p>
+
+                </div>
+
+                <button
+                    type="button"
+                    class="primary-btn"
+                    id="openCreateProjectBtn"
+                >
+
+                    <i class="ri-add-line"></i>
+
+                    ثبت پروژه جدید
+
+                </button>
+
+            </div>
+
+
+            <div class="stats-row">
+
+                <div class="stat-card">
+
+                    <i class="ri-folder-line"></i>
+
+                    <div>
+
+                        <strong id="myProjectsCount">
+                            0
+                        </strong>
+
+                        <span>
+                            پروژه‌های من
+                        </span>
+
+                    </div>
+
+                </div>
+
+                <div class="stat-card">
+
+                    <i class="ri-mail-line"></i>
+
+                    <div>
+
+                        <strong id="receivedProposalsCount">
+                            0
+                        </strong>
+
+                        <span>
+                            پیشنهادهای دریافتی
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="section-title">
+                پروژه‌های من
+            </div>
+
+            <div
+                class="projects-grid"
+                id="employerProjects"
+            ></div>
+
+            <div
+                class="empty-state hidden"
+                id="employerEmpty"
+            >
+
+                <i class="ri-folder-open-line"></i>
+
+                <h3>
+                    هنوز پروژه‌ای ثبت نکرده‌اید
+                </h3>
+
+                <p>
+                    اولین پروژه خود را ثبت کنید.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+                       FREELANCER PANEL
+        ================================================= -->
+
+        <section
+            class="freelancer-panel"
+            id="freelancerPanel"
+        >
+
+            <div class="section-heading">
+
+                <div>
+
+                    <span class="section-label">
+
+                        <i class="ri-code-box-line"></i>
+
+                        بازار کار
+
+                    </span>
+
+                    <h2>
+                        پروژه‌های موجود
+                    </h2>
+
+                    <p>
+                        پروژه مناسب مهارتت را پیدا کن و پیشنهاد بفرست.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="filters">
+
+                <div class="search-box">
+
+                    <i class="ri-search-line"></i>
+
+                    <input
+                        type="search"
+                        id="projectSearch"
+                        placeholder="جستجوی پروژه..."
+                    >
+
+                </div>
+
+                <select id="categoryFilter">
+
+                    <option value="all">
+                        همه دسته‌بندی‌ها
+                    </option>
+
+                    <option value="frontend">
+                        Front-End
+                    </option>
+
+                    <option value="backend">
+                        Back-End
+                    </option>
+
+                    <option value="graphic">
+                        طراحی گرافیک
+                    </option>
+
+                    <option value="logo">
+                        طراحی لوگو
+                    </option>
+
+                    <option value="photoshop">
+                        Photoshop
+                    </option>
+
+                    <option value="other">
+                        سایر
+                    </option>
+
+                </select>
+
+                <select id="budgetFilter">
+
+                    <option value="all">
+                        همه بودجه‌ها
+                    </option>
+
+                    <option value="low">
+                        کمتر از ۱۰ میلیون
+                    </option>
+
+                    <option value="medium">
+                        ۱۰ تا ۵۰ میلیون
+                    </option>
+
+                    <option value="high">
+                        بیشتر از ۵۰ میلیون
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <div
+                class="projects-grid"
+                id="projectsGrid"
+            ></div>
+
+            <div
+                class="empty-state hidden"
+                id="projectsEmpty"
+            >
+
+                <i class="ri-search-eye-line"></i>
+
+                <h3>
+                    پروژه‌ای پیدا نشد
+                </h3>
+
+                <p>
+                    پروژه‌ای مطابق جستجو یا فیلتر شما وجود ندارد.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+                           CHAT SECTION
+        ================================================= -->
+
+        <section class="chat-section">
+
+            <div class="section-heading">
+
+                <div>
+
+                    <span class="section-label">
+
+                        <i class="ri-message-3-line"></i>
+
+                        گفتگوهای من
+
+                    </span>
+
+                    <h2>
+                        چت با کاربر
+                    </h2>
+
+                    <p>
+                        گفتگوهای مربوط به پروژه‌های فعال شما اینجا نمایش داده می‌شوند.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="chat-layout">
+
+
+                <!-- CHAT LIST -->
+
+                <aside class="chat-sidebar">
+
+                    <div class="chat-sidebar-title">
+                        گفتگوها
+                    </div>
+
+                    <div
+                        id="chatList"
+                        class="chat-list"
+                    ></div>
+
+                </aside>
+
+
+                <!-- CHAT WINDOW -->
+
+                <div class="chat-window">
+
+                    <div
+                        id="chatEmpty"
+                        class="chat-empty"
+                    >
+
+                        <i class="ri-chat-off-line"></i>
+
+                        <h3>
+                            هنوز گفتگویی وجود ندارد
+                        </h3>
+
+                        <p>
+                            بعد از تأیید پیشنهاد و انتخاب فریلنسر، گفتگو به صورت خودکار ایجاد می‌شود.
+                        </p>
+
+                    </div>
+
+
+                    <div
+                        id="chatContent"
+                        class="chat-content hidden"
+                    >
+
+                        <div class="chat-header">
+
+                            <div>
+
+                                <strong id="chatUserName">
+                                    -
+                                </strong>
+
+                                <span id="chatProjectName">
+                                    -
+                                </span>
+
+                            </div>
+
+                        </div>
+
+
+                        <div
+                            id="messagesList"
+                            class="messages-list"
+                        ></div>
+
+
+                        <form
+                            id="chatForm"
+                            class="chat-form"
+                        >
+
+                            <input
+                                type="text"
+                                id="chatInput"
+                                autocomplete="off"
+                                placeholder="پیامت را بنویس..."
+                                required
+                            >
+
+                            <button
+                                type="submit"
+                                class="primary-btn"
+                            >
+
+                                <i class="ri-send-plane-fill"></i>
+
+                            </button>
+
+                        </form>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </div>
+
+</main>
+
+
+<!-- =====================================================
+                   ROLE MODAL
+===================================================== -->
+
+<div
+    class="modal-overlay hidden"
+    id="roleModal"
+>
+
+    <div class="modal role-modal">
+
+        <div class="modal-header">
+
+            <div>
+
+                <span>
+                    شروع کار
+                </span>
+
+                <h2>
+                    با چه نقشی وارد می‌شوی؟
+                </h2>
+
+            </div>
+
+        </div>
+
+        <div class="modal-body">
+
+            <p class="role-description">
+                نقش خود را انتخاب کن. این انتخاب برای این حساب فقط یک‌بار انجام می‌شود.
+            </p>
+
+            <div class="role-options">
+
+                <button
+                    type="button"
+                    class="role-option"
+                    data-role="freelancer"
+                >
+
+                    <i class="ri-code-box-line"></i>
+
+                    <strong>
+                        فریلنسر
+                    </strong>
+
+                    <span>
+                        پروژه پیدا کن و پیشنهاد ارسال کن.
+                    </span>
+
+                </button>
+
+
+                <button
+                    type="button"
+                    class="role-option"
+                    data-role="employer"
+                >
+
+                    <i class="ri-user-star-line"></i>
+
+                    <strong>
+                        کارفرما
+                    </strong>
+
+                    <span>
+                        پروژه ثبت کن و فریلنسر انتخاب کن.
+                    </span>
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- =====================================================
+                   PROJECT DETAILS MODAL
+===================================================== -->
+
+<div
+    class="modal-overlay hidden"
+    id="projectDetailsModal"
+>
+
+    <div class="modal">
+
+        <div class="modal-header">
+
+            <div>
+
+                <span>
+                    جزئیات پروژه
+                </span>
+
+                <h2 id="detailsProjectTitle">
+                    -
+                </h2>
+
+            </div>
+
+            <button
+                type="button"
+                class="modal-close"
+                data-close="projectDetailsModal"
+            >
+
+                <i class="ri-close-line"></i>
+
+            </button>
+
+        </div>
+
+
+        <div class="modal-body">
+
+            <div class="detail-grid">
+
+                <div>
+
+                    <span>
+                        دسته‌بندی
+                    </span>
+
+                    <strong id="detailsProjectCategory">
+                        -
+                    </strong>
+
+                </div>
+
+                <div>
+
+                    <span>
+                        بودجه
+                    </span>
+
+                    <strong id="detailsProjectBudget">
+                        -
+                    </strong>
+
+                </div>
+
+                <div>
+
+                    <span>
+                        مهلت
+                    </span>
+
+                    <strong id="detailsProjectDeadline">
+                        -
+                    </strong>
+
+                </div>
+
+                <div>
+
+                    <span>
+                        کارفرما
+                    </span>
+
+                    <strong id="detailsProjectEmployer">
+                        -
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+            <div class="description-box">
+
+                <h3>
+                    توضیحات
+                </h3>
+
+                <p id="detailsProjectDescription">
+                    -
+                </p>
+
+            </div>
+
+
+            <div class="skills-box">
+
+                <h3>
+                    مهارت‌های موردنیاز
+                </h3>
+
+                <div id="detailsProjectSkills"></div>
+
+            </div>
+
+
+            <div class="privacy-note">
+
+                <i class="ri-shield-check-line"></i>
+
+                <span>
+                    اطلاعات تماس خصوصی کاربران در این بخش نمایش داده نمی‌شود.
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <div class="modal-footer">
+
+            <button
+                type="button"
+                class="secondary-btn"
+                data-close="projectDetailsModal"
+            >
+                بستن
+            </button>
+
+            <button
+                type="button"
+                class="primary-btn"
+                id="openProposalBtn"
+            >
+
+                <i class="ri-send-plane-line"></i>
+
+                ارسال پیشنهاد
+
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- =====================================================
+                   PROPOSAL MODAL
+===================================================== -->
+
+<div
+    class="modal-overlay hidden"
+    id="proposalModal"
+>
+
+    <div class="modal proposal-modal">
+
+        <div class="modal-header">
+
+            <div>
+
+                <span>
+                    ارسال پیشنهاد
+                </span>
+
+                <h2>
+                    پیشنهاد انجام پروژه
+                </h2>
+
+            </div>
+
+            <button
+                type="button"
+                class="modal-close"
+                data-close="proposalModal"
+            >
+
+                <i class="ri-close-line"></i>
+
+            </button>
+
+        </div>
+
+
+        <form id="proposalForm">
+
+            <div class="modal-body">
+
+                <div class="selected-project">
+
+                    <span>
+                        پروژه
+                    </span>
+
+                    <strong id="proposalProjectTitle">
+                        -
+                    </strong>
+
+                </div>
+
+
+                <div class="proposal-user">
+
+                    <span>
+                        پیشنهاد توسط
+                    </span>
+
+                    <strong id="proposalUserName">
+                        -
+                    </strong>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="proposalPrice">
+                        مبلغ پیشنهادی
+                    </label>
+
+                    <input
+                        type="number"
+                        id="proposalPrice"
+                        min="0"
+                        required
+                        placeholder="مثلاً 5000000"
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="proposalDays">
+                        زمان پیشنهادی
+                    </label>
+
+                    <input
+                        type="text"
+                        id="proposalDays"
+                        required
+                        placeholder="مثلاً 7 روز"
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="proposalMessage">
+                        متن پیشنهاد
+                    </label>
+
+                    <textarea
+                        id="proposalMessage"
+                        rows="6"
+                        required
+                        placeholder="توضیحات پیشنهاد خود را بنویسید..."
+                    ></textarea>
+
+                </div>
+
+
+                <div class="proposal-cost">
+
+                    <i class="ri-information-line"></i>
+
+                    <span>
+                        هزینه ارسال پیشنهاد:
+                    </span>
+
+                    <strong>
+                        ۵۰ توکن
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+            <div class="modal-footer">
+
+                <button
+                    type="button"
+                    class="secondary-btn"
+                    data-close="proposalModal"
+                >
+                    انصراف
+                </button>
+
+                <button
+                    type="submit"
+                    class="primary-btn"
+                >
+
+                    <i class="ri-send-plane-line"></i>
+
+                    ارسال پیشنهاد
+
+                </button>
+
+            </div>
+
+        </form>
+
+    </div>
+
+</div>
+
+
+<!-- =====================================================
+                   CREATE PROJECT MODAL
+===================================================== -->
+
+<div
+    class="modal-overlay hidden"
+    id="createProjectModal"
+>
+
+    <div class="modal create-modal">
+
+        <div class="modal-header">
+
+            <div>
+
+                <span>
+                    ثبت پروژه
+                </span>
+
+                <h2>
+                    پروژه جدید
+                </h2>
+
+            </div>
+
+            <button
+                type="button"
+                class="modal-close"
+                data-close="createProjectModal"
+            >
+
+                <i class="ri-close-line"></i>
+
+            </button>
+
+        </div>
+
+
+        <form id="createProjectForm">
+
+            <div class="modal-body">
+
+                <div class="form-grid">
+
+                    <div class="form-group">
+
+                        <label for="projectTitle">
+                            عنوان پروژه
+                        </label>
+
+                        <input
+                            type="text"
+                            id="projectTitle"
+                            required
+                            placeholder="مثلاً طراحی سایت فروشگاهی"
+                        >
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="projectCategory">
+                            دسته‌بندی
+                        </label>
+
+                        <select
+                            id="projectCategory"
+                            required
+                        >
+
+                            <option value="">
+                                انتخاب دسته‌بندی
+                            </option>
+
+                            <option value="frontend">
+                                Front-End
+                            </option>
+
+                            <option value="backend">
+                                Back-End
+                            </option>
+
+                            <option value="graphic">
+                                طراحی گرافیک
+                            </option>
+
+                            <option value="logo">
+                                طراحی لوگو
+                            </option>
+
+                            <option value="photoshop">
+                                Photoshop
+                            </option>
+
+                            <option value="other">
+                                سایر
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="projectBudget">
+                            بودجه
+                        </label>
+
+                        <input
+                            type="number"
+                            id="projectBudget"
+                            min="0"
+                            required
+                            placeholder="مثلاً 5000000"
+                        >
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="projectDeadline">
+                            مهلت انجام
+                        </label>
+
+                        <input
+                            type="text"
+                            id="projectDeadline"
+                            required
+                            placeholder="مثلاً 10 روز"
+                        >
+
+                    </div>
+
+
+                    <div class="form-group full">
+
+                        <label for="projectSkills">
+                            مهارت‌های موردنیاز
+                        </label>
+
+                        <input
+                            type="text"
+                            id="projectSkills"
+                            placeholder="HTML, CSS, JavaScript"
+                        >
+
+                    </div>
+
+
+                    <div class="form-group full">
+
+                        <label for="projectDescription">
+                            توضیحات پروژه
+                        </label>
+
+                        <textarea
+                            id="projectDescription"
+                            rows="7"
+                            required
+                            placeholder="توضیحات کامل پروژه..."
+                        ></textarea>
+
+                    </div>
+
+                </div>
+
+
+                <div class="proposal-cost project-cost">
+
+                    <i class="ri-coin-line"></i>
+
+                    <span>
+                        هزینه ثبت پروژه:
+                    </span>
+
+                    <strong>
+                        ۵۰ توکن
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+            <div class="modal-footer">
+
+                <button
+                    type="button"
+                    class="secondary-btn"
+                    data-close="createProjectModal"
+                >
+                    انصراف
+                </button>
+
+                <button
+                    type="submit"
+                    class="primary-btn"
+                >
+
+                    <i class="ri-add-line"></i>
+
+                    ثبت پروژه
+
+                </button>
+
+            </div>
+
+        </form>
+
+    </div>
+
+</div>
+
+
+<!-- =====================================================
+                         TOAST
+===================================================== -->
+
+<div id="toastContainer"></div>
+
+
+<script src="../js/projects.js"></script>
+
+</body>
+
+</html>

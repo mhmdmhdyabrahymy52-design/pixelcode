@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>
+
+        PixelCode | مدیریت پشتیبانی
+
+    </title>
+
+    <link rel="stylesheet" href="../css/support-admin.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css">
+
+</head>
+
+<body>
+
+    <div class="admin-page">
+
+        <header class="header">
+
+            <div class="header-left">
+
+                <h1>
+
+                    مدیریت پشتیبانی
+
+                </h1>
+
+                <p>
+
+                    مدیریت کامل تیکت‌های کاربران
+
+                </p>
+
+            </div>
+
+            <div class="header-right">
+
+                <i class="ri-customer-service-2-fill"></i>
+
+            </div>
+
+        </header>
+
+        <section class="stats">
+
+            <div class="card">
+
+                <i class="ri-message-3-fill"></i>
+
+                <h2 id="totalTickets">
+
+                    0
+
+                </h2>
+
+                <p>
+
+                    کل تیکت‌ها
+
+                </p>
+
+            </div>
+
+            <div class="card">
+
+                <i class="ri-mail-open-fill"></i>
+
+                <h2 id="openTickets">
+
+                    0
+
+                </h2>
+
+                <p>
+
+                    باز
+
+                </p>
+
+            </div>
+
+            <div class="card">
+
+                <i class="ri-chat-check-fill"></i>
+
+                <h2 id="answeredTickets">
+
+                    0
+
+                </h2>
+
+                <p>
+
+                    پاسخ داده شده
+
+                </p>
+
+            </div>
+
+            <div class="card">
+
+                <i class="ri-lock-fill"></i>
+
+                <h2 id="closedTickets">
+
+                    0
+
+                </h2>
+
+                <p>
+
+                    بسته شده
+
+                </p>
+
+            </div>
+
+        </section>
+
+        <main class="layout">
+            <!--==================================
+            SIDEBAR
+===================================-->
+
+            <aside class="sidebar">
+
+                <div class="sidebar-header">
+
+                    <h2>
+
+                        تیکت‌ها
+
+                    </h2>
+
+                </div>
+
+
+                <!--========================
+        SEARCH
+=========================-->
+
+                <div class="search-box">
+
+                    <i class="ri-search-line"></i>
+
+                    <input id="ticketSearch" type="text" placeholder="جستجوی تیکت...">
+
+                </div>
+
+
+                <!--========================
+        FILTER
+=========================-->
+
+                <div class="filters">
+
+                    <button class="filter-btn active" data-filter="all">
+
+                        همه
+
+                    </button>
+
+                    <button class="filter-btn" data-filter="open">
+
+                        باز
+
+                    </button>
+
+                    <button class="filter-btn" data-filter="answered">
+
+                        پاسخ داده شده
+
+                    </button>
+
+                    <button class="filter-btn" data-filter="closed">
+
+                        بسته شده
+
+                    </button>
+
+                </div>
+
+
+                <!--========================
+        LIST
+=========================-->
+
+                <div id="ticketList" class="ticket-list">
+
+                </div>
+
+            </aside>
+
+            <!--==================================
+            CHAT
+===================================-->
+
+            <section class="chat">
+
+                <div class="chat-header">
+
+                    <div class="chat-user">
+
+                        <div class="avatar">
+
+                            <i class="ri-user-3-fill"></i>
+
+                        </div>
+
+                        <div class="user-info">
+
+                            <h2 id="ticketUserName">
+
+                                هیچ تیکتی انتخاب نشده
+
+                            </h2>
+
+                            <span id="ticketStatus">
+
+                                -
+
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                    <div class="chat-tools">
+
+                        <button type="button" id="refreshTicket" title="بروزرسانی">
+
+                            <i class="ri-refresh-line"></i>
+
+                        </button>
+
+                        <button type="button" id="changeStatus" title="تغییر وضعیت">
+
+                            <i class="ri-loop-right-line"></i>
+
+                        </button>
+
+                        <button type="button" id="closeTicket" title="بستن تیکت">
+
+                            <i class="ri-lock-line"></i>
+
+                        </button>
+
+                        <button type="button" id="deleteTicket" title="حذف تیکت">
+
+                            <i class="ri-delete-bin-6-line"></i>
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+                <!--========================
+        TICKET INFO
+=========================-->
+
+                <div class="ticket-info">
+
+                    <div class="info-item">
+
+                        <span>
+
+                            شناسه
+
+                        </span>
+
+                        <strong id="ticketId">
+
+                            -
+
+                        </strong>
+
+                    </div>
+
+                    <div class="info-item">
+
+                        <span>
+
+                            عنوان
+
+                        </span>
+
+                        <strong id="ticketTitle">
+
+                            -
+
+                        </strong>
+
+                    </div>
+
+                    <div class="info-item">
+
+                        <span>
+
+                            دسته بندی
+
+                        </span>
+
+                        <strong id="ticketCategory">
+
+                            -
+
+                        </strong>
+
+                    </div>
+
+                    <div class="info-item">
+
+                        <span>
+
+                            اولویت
+
+                        </span>
+
+                        <strong id="ticketPriority">
+
+                            -
+
+                        </strong>
+
+                    </div>
+
+                </div>
+
+                <!--========================
+        CHAT BODY
+=========================-->
+
+                <div id="chatMessages" class="chat-messages">
+
+                    <div class="empty-chat">
+
+                        <i class="ri-chat-3-line"></i>
+
+                        <h3>
+
+                            هنوز تیکتی انتخاب نشده
+
+                        </h3>
+
+                        <p>
+
+                            از سمت راست یک تیکت را انتخاب کنید.
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+                <!--========================
+        REPLY BOX
+=========================-->
+
+                <div id="replyPreview" class="reply-preview hidden">
+
+                    <div class="reply-text">
+
+                        <strong>
+
+                            پاسخ به
+
+                        </strong>
+
+                        <span id="replyContent">
+
+                        </span>
+
+                    </div>
+
+                    <button id="cancelReply" type="button" title="لغو پاسخ">
+
+                        <i class="ri-close-line"></i>
+
+                    </button>
+
+                </div>
+
+                <!--========================
+        FILE PREVIEW
+=========================-->
+
+                <div id="selectedFiles" class="selected-files">
+
+                </div>
+
+                <!--========================
+        CHAT FOOTER
+=========================-->
+
+                <div class="chat-footer">
+
+                    <!--====================
+            TOOLS
+    ====================-->
+
+                    <div class="message-tools">
+
+                        <!-- Emoji -->
+
+                        <button id="emojiBtn" class="tool-btn" type="button" title="ایموجی">
+
+                            <i class="ri-emotion-happy-line"></i>
+
+                        </button>
+
+                        <!-- Emoji Picker -->
+
+                        <div id="emojiPicker" class="emoji-picker">
+
+                        </div>
+
+                        <!-- Image -->
+
+                        <label class="tool-btn" title="ارسال تصویر">
+
+                            <i class="ri-image-line"></i>
+
+                            <input id="imageInput" type="file" accept="image/*" hidden>
+
+                        </label>
+
+                        <!-- File -->
+
+                        <label class="tool-btn" title="ارسال فایل">
+
+                            <i class="ri-attachment-2"></i>
+
+                            <input id="fileInput" type="file" hidden>
+
+                        </label>
+
+                    </div>
+
+
+                    <!--====================
+            INPUT
+    ====================-->
+
+                    <div class="message-input">
+
+                        <textarea id="messageInput" rows="2" placeholder="پاسخ مدیر را بنویسید...">
+
+        </textarea>
+
+                    </div>
+
+
+                    <!--====================
+            SEND
+    ====================-->
+
+                    <button id="sendMessageBtn" class="send-btn" type="button" title="ارسال پاسخ"
+                        aria-label="ارسال پاسخ">
+
+                        <i class="ri-send-plane-fill"></i>
+
+                    </button>
+
+                </div>
+
+            </section>
+
+        </main>
+
+        <!--============================
+        IMAGE MODAL
+=============================-->
+
+        <div id="imageModal" class="image-modal hidden">
+
+            <button id="closeImageModal" class="close-image" type="button" title="بستن">
+
+                <i class="ri-close-line"></i>
+
+            </button>
+
+            <img id="previewImage" src="" alt="preview">
+
+        </div>
+        <!--============================
+        TOAST
+=============================-->
+
+        <div id="toastContainer" class="toast-container">
+
+        </div>
+
+        <script src="../js/support-admin.js"></script>
+
+</body>
+
+</html>

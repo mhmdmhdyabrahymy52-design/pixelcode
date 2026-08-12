@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+
+<html lang="fa" dir="rtl">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>
+
+        ثبت نام | PixelCode
+
+    </title>
+
+    <!-- Fonts -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@100;200;300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+
+    <!-- CSS -->
+
+    <link rel="stylesheet" href="../css/register.css">
+
+    <link rel="stylesheet" href="../css/modal.css">
+
+    <link rel="stylesheet" href="../css/toast.css">
+
+    <link rel="stylesheet" href="../css/animations.css">
+
+</head>
+
+<body>
+
+    <main class="register-page">
+
+        <div class="register-card">
+
+            <a href="index.html" class="logo">
+
+                Pixel<span>Code</span>
+
+            </a>
+
+            <h1>
+
+                ایجاد حساب کاربری
+
+            </h1>
+
+            <p class="subtitle">
+
+                برای استفاده از امکانات سایت ثبت نام کنید.
+
+            </p>
+
+            <form id="registerForm" class="register-form">
+                <!--==========================
+        نام و نام خانوادگی
+===========================-->
+
+                <div class="input-group">
+
+                    <label for="fullname">
+
+                        نام و نام خانوادگی
+
+                    </label>
+
+                    <input type="text" id="fullname" placeholder="مثلاً محمد محمدی" autocomplete="name">
+
+                </div>
+
+                <!--==========================
+        نام کاربری
+===========================-->
+
+                <div class="input-group">
+
+                    <label for="username">
+
+                        نام کاربری
+
+                    </label>
+
+                    <input type="text" id="username" placeholder="مثلاً pixelcode" autocomplete="username">
+
+                    <small>
+
+                        فقط حروف انگلیسی، اعداد، نقطه و _ مجاز است.
+
+                    </small>
+
+                </div>
+
+                <!--==========================
+        ایمیل
+===========================-->
+
+                <div class="input-group">
+
+                    <label for="email">
+
+                        ایمیل
+
+                    </label>
+
+                    <input type="email" id="email" placeholder="example@gmail.com" autocomplete="email">
+
+                </div>
+
+                <!--==========================
+        موبایل
+===========================-->
+
+                <div class="input-group">
+
+                    <label for="phone">
+
+                        شماره موبایل
+
+                    </label>
+
+                    <input type="tel" id="phone" placeholder="09xxxxxxxxx" autocomplete="tel">
+
+                </div>
+                <!--==========================
+        رمز عبور
+===========================-->
+
+                <div class="input-group">
+
+                    <label for="password">
+
+                        رمز عبور
+
+                    </label>
+
+                    <div class="password-box">
+
+                        <input type="password" id="password" placeholder="حداقل 8 کاراکتر" autocomplete="new-password">
+
+                        <button type="button" class="show-password" id="togglePassword">
+
+                            👁
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+                <!--==========================
+        تکرار رمز عبور
+===========================-->
+
+                <div class="input-group">
+
+                    <label for="confirmPassword">
+
+                        تکرار رمز عبور
+
+                    </label>
+
+                    <div class="password-box">
+
+                        <input type="password" id="confirmPassword" placeholder="رمز عبور را دوباره وارد کنید"
+                            autocomplete="new-password">
+
+                        <button type="button" class="show-password" id="toggleConfirmPassword">
+
+                            👁
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+                <!--==========================
+        قوانین
+===========================-->
+
+                <div class="terms">
+
+                    <label>
+
+                        <input type="checkbox" id="acceptTerms">
+
+                        قوانین و مقررات PixelCode را می‌پذیرم.
+
+                    </label>
+
+                </div>
+
+                <!--==========================
+        دکمه ثبت نام
+===========================-->
+
+                <button type="submit" class="register-btn">
+
+                    ایجاد حساب
+
+                </button>
+
+            </form>
+
+            <!--==========================
+        ورود
+===========================-->
+
+            <p class="login-text">
+
+                قبلاً ثبت نام کرده‌اید؟
+
+                <a href="login.html">
+
+                    ورود به حساب
+
+                </a>
+
+            </p>
+
+        </div>
+
+    </main>
+
+    <script src="../js/utils.js"></script>
+
+    <script src="../js/modal.js"></script>
+
+    <script src="../js/toast.js"></script>
+
+    <script src="../js/register.js"></script>
+
+</body>
+
+</html>
